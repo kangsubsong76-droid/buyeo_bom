@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-farm-50: #F9F7F2;
+  --color-farm-100: #F0EBE0;
+  --color-farm-200: #E6D5C3;
+  --color-farm-300: #C9B198;
+  --color-farm-400: #8A9A5B;
+  --color-farm-500: #4B5E40;
+  --color-farm-600: #3D4D34;
+  --color-farm-700: #2C3327;
+  --color-farm-800: #1A1F18;
+  --color-farm-950: #0F120E;
+
+  --font-serif: "Gowun Batang", "Noto Serif KR", serif;
+  --font-sans: "Gowun Batang", "Noto Sans KR", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-farm-50 text-farm-700;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl text-farm-500 mb-6;
+  }
+
+  .section-subtitle {
+    @apply font-serif text-lg md:text-xl text-farm-300 mb-12 tracking-wide;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
