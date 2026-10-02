@@ -50,6 +50,14 @@ import rusticBread from './assets/images/curated/rustic_bread.jpg';
 import hostsCouple from './assets/images/curated/hosts_couple.jpg';
 import stoveFire from './assets/images/curated/stove_fire.jpg';
 
+// Architectural & Building journey images
+import buildMasterplan from './assets/images/curated/build_masterplan.jpg';
+import buildFramingSite from './assets/images/curated/build_framing_site.jpg';
+import buildCarpentryWork from './assets/images/curated/build_carpentry_work.jpg';
+import buildBrickMasonry from './assets/images/curated/build_brick_masonry.jpg';
+import buildWorkshopSiding from './assets/images/curated/build_workshop_siding.jpg';
+import buildFireplaceSanctuary from './assets/images/curated/build_fireplace_sanctuary.jpg';
+
 // Instagram 9 square feed images
 import insta01 from './assets/images/curated/insta_01.jpg';
 import insta02 from './assets/images/curated/insta_02.jpg';
@@ -128,43 +136,76 @@ const App = () => {
     }
   ];
 
-  // Farm History & Milestones
+  // Farm History & Milestones with Authentic Construction Journey
   const farmMilestones = [
     {
       year: '2023',
-      title: '터잡기와 손수 지은 집',
+      period: '봄 ~ 가을',
+      title: '대지와의 첫 만남 & 손글씨 마스터플랜',
+      subtitle: '경사와 물길을 살피며 직접 도면을 그리다',
+      image: buildMasterplan,
+      imageCaption: '손으로 직접 기록한 구획(Zone 1~4), 수로, 우물, 텃밭 배치도',
       items: [
-        '도시 생활을 정리하고 충남 부여군 임천면 1,800평 평온한 언덕에 터를 잡음',
-        '가구 목수 남편, 지역 목수님과 함께 살림집 및 스튜디오 나무다움 목공소 직영 착공 및 완공',
-        '3무(無) 원칙(무경운·무화학비료·자연멀칭) 자연농·퍼머컬처 텃밭 조성 개간'
+        '도시 생활을 정리하고 충남 부여군 임천면 1,800평 언덕에 터를 잡음',
+        '대지의 자연 경사와 물길을 살피며 손으로 직접 농원 마스터플랜(Zone 1~4 구획, 수로 및 우물 설계) 작성',
+        '3무(無경운·無화학비료·자연멀칭) 자연농·퍼머컬처 텃밭 기반 개간 시작'
       ]
     },
     {
-      year: '2024',
-      title: '현존캠퍼스 지정 & 생태 인프라',
+      year: '2024 상반기',
+      period: '봄 ~ 초여름',
+      title: '나무를 세우고 붉은 벽돌을 쌓아올리다',
+      subtitle: '목구조 골조와 공방 골함석 외벽, 장인의 조적',
+      images: [
+        { src: buildFramingSite, label: '햇살 아래 목구조 골조 현장 전경' },
+        { src: buildBrickMasonry, label: '붉은 고벽돌 수평 조적 시공' },
+        { src: buildWorkshopSiding, label: '심플우드 공방 은빛 골함석 외벽' },
+        { src: buildCarpentryWork, label: '목수의 정밀한 개구부 창호 시공' }
+      ],
       items: [
-        '현존명상센터 부여캠퍼스 지정 (도시 회원 집중수련 및 리트릿 공간)',
-        '6kW 친환경 태양광 발전 및 지하수·빗물 집수 시스템 구축',
-        '독립 욕실과 주방을 갖춘 프라이빗 게스트룸 완공',
-        '조선시대 전통 석빙고 시설 정비 및 농산물 자연저장 시작'
+        '가구 목수 남편(심플우드)과 목수 친구들이 뜻을 모아 살림집 및 목공소 직영 착공',
+        '독일 시스템 기밀 단열 하우스랩 위에 붉은 고벽돌을 한 장 한 장 손으로 쌓아 올림',
+        '창작 공간인 심플우드 목공방에 은회색 골함석 외벽을 시공하여 단단하고 소박한 건축미 완성'
+      ]
+    },
+    {
+      year: '2024 하반기',
+      period: '늦여름 ~ 겨울',
+      title: '불을 지피고 숲을 담는 쉼터 완성',
+      subtitle: '통창 너머 숲과 따뜻한 주물 벽난로',
+      image: buildFireplaceSanctuary,
+      imageCaption: '통창 너머 부여의 녹음과 타오르는 주물 벽난로가 있는 고요한 명상 쉼터',
+      items: [
+        '계절의 변화를 파노라마로 담아내는 통창과 고효율 스칸디나비아 주물 벽난로 설치 완공',
+        '첫 장작불을 지피며 몸과 마음이 쉴 수 있는 자연 속 안식처의 골격을 온전히 갖춤',
+        '지하 암반수 및 친환경 태양광 발전 인프라 구축'
       ]
     },
     {
       year: '2025',
-      title: '치유 프로그램 런칭 & 우프 교류',
+      period: '사계절',
+      title: '현존명상센터 부여캠퍼스 개원 & 숲밭 안정',
+      subtitle: '도심 회원들의 사마타 집중 수련처이자 생태 정원',
+      image: mandalaMindfulness,
+      imageCaption: '나선형 만다라 허브 명상 정원과 고요한 명상의 아침',
       items: [
+        '성북동 현존명상센터의 공식 외원 ‘부여캠퍼스’로 정식 지정 (도시 회원 집중수련처)',
+        '중심으로 에너지가 모이는 나선형 만다라 허브 명상 정원(Spiral Garden) 조성',
         'WWOOF Korea 공식 호스트 등록, 국내외 청년·생태 활동가들과 우핑 교류',
-        '나선형 만다라 허브 명상 정원(Spiral Garden) 완공',
-        '도시 회원 주말 정기 현존 리트릿 및 가족 힐링 프로그램 본격 운영',
-        '토종밤·고구마 수확 및 저온압착 생들기름 짜기 갈무리'
+        '토종 씨앗 채종 및 자급자족 유기순환 숲밭 생태계 안착'
       ]
     },
     {
       year: '2026',
-      title: '기업 웰니스 확장 & 온전한 안착',
+      period: '현재',
+      title: '일상 속 현존과 나눔의 치유농원',
+      subtitle: '개인·가족 힐링 리트릿 및 기업 웰니스 개방',
+      image: hostsCouple,
+      imageCaption: '있는 그대로의 삶을 나누는 봄농원의 두 호스트',
       items: [
-        '직무 스트레스 및 번아웃 극복을 위한 기업·단체 그린 리커버리(Green Recovery) 프로그램 런칭',
-        '생태, 순환, 그리고 일상 속 알아차림이 숨 쉬는 명상농원으로 자리매김'
+        '도심 회원을 위한 주말 집중 정진 및 1:1 맞춤형 힐링 세션 상시 운영',
+        '직무 스트레스 완화와 팀 번아웃 회복을 위한 기업·기관 마인드풀니스 웰니스 프로그램 런칭',
+        '온·오프라인을 잇는 지속 가능한 생태 명상 커뮤니티로 도약'
       ]
     }
   ];
@@ -175,40 +216,76 @@ const App = () => {
       id: 1,
       cat: 'build',
       catName: '집 짓던 날',
-      title: '지역 목수님과 함께 올린 서까래',
-      desc: '기계음 대신 망치 소리와 톱밥 냄새로 채워졌던 2023년의 봄. 우리 손으로 흙 위에 쉼터를 지었습니다.',
-      img: carpenterFriends,
-      date: '2023.05'
+      title: '손으로 직접 그린 농원 마스터플랜',
+      desc: '대지의 경사와 물길을 살피며 손수 작성한 수로, 계단식 밭(Zone 1~4), 우물 구획도.',
+      img: buildMasterplan,
+      date: '2023.04'
     },
     {
       id: 2,
       cat: 'build',
       catName: '집 짓던 날',
-      title: '벽돌집과 목공소가 자리 잡다',
-      desc: '햇살이 잘 드는 언덕에 붉은 벽돌집과 은빛 목공소가 완성되었습니다.',
-      img: farmHouses,
-      date: '2023.09'
+      title: '5월 햇살 아래 오른 목구조 골조',
+      desc: '1,800평 언덕 위에 기둥과 서까래를 세우고 벽돌을 맞이하던 설레는 공사 현장 전경.',
+      img: buildFramingSite,
+      date: '2024.05'
     },
     {
       id: 3,
-      cat: 'craft',
-      catName: '스튜디오 나무다움',
-      title: '대패질 끝에 드러나는 나뭇결',
-      desc: '인위적인 코팅 없이 자연 원목 그대로의 결을 살려 농원의 살림살이를 만듭니다.',
-      img: woodCraftsmanHands,
-      date: '2024.03'
+      cat: 'build',
+      catName: '집 짓던 날',
+      title: '목수의 정밀한 수평과 창호 시공',
+      desc: '문틀 하나 창틀 하나, 매 순간 호흡을 집중하여 세운 목공 작업의 현장.',
+      img: buildCarpentryWork,
+      date: '2024.05'
     },
     {
       id: 4,
+      cat: 'build',
+      catName: '집 짓던 날',
+      title: '붉은 고벽돌을 한 장씩 쌓아올리다',
+      desc: '기밀 단열재 위에 노란 수평실을 띄우고 정성으로 줄눈을 맞춘 조적 벽체.',
+      img: buildBrickMasonry,
+      date: '2024.05'
+    },
+    {
+      id: 5,
+      cat: 'build',
+      catName: '집 짓던 날',
+      title: '심플우드 공방의 은빛 골함석 외벽',
+      desc: '소박하고 단단하게, 자연의 비바람을 견뎌줄 목공 작업실의 골함석 마감.',
+      img: buildWorkshopSiding,
+      date: '2024.05'
+    },
+    {
+      id: 6,
+      cat: 'build',
+      catName: '집 짓던 날',
+      title: '통창 숲 뷰와 타오르는 벽난로의 첫 불',
+      desc: '완성된 쉼터 거실, 통창 너머 초록 숲을 바라보며 장작 난로에 첫 불을 지피던 순간.',
+      img: buildFireplaceSanctuary,
+      date: '2024.08'
+    },
+    {
+      id: 7,
+      cat: 'craft',
+      catName: '스튜디오 심플우드',
+      title: '대패질 끝에 드러나는 나뭇결',
+      desc: '인위적인 코팅 없이 자연 원목 그대로의 결을 살려 농원의 살림살이를 만듭니다.',
+      img: woodCraftsmanHands,
+      date: '2024.09'
+    },
+    {
+      id: 8,
       cat: 'nature',
       catName: '대지의 결실',
-      title: '6월 첫 햇감자의 선물',
+      title: '첫 수확 햇감자의 선물',
       desc: '비료도 농약도 없이 대지가 품어준 포슬포슬한 햇감자를 손으로 거두던 벅찬 날.',
       img: harvestPotatoes,
       date: '2024.06'
     },
     {
-      id: 5,
+      id: 9,
       cat: 'mind',
       catName: '명상과 쉼',
       title: '나선형 만다라 텃밭의 첫 아침',
@@ -217,7 +294,7 @@ const App = () => {
       date: '2025.04'
     },
     {
-      id: 6,
+      id: 10,
       cat: 'nature',
       catName: '대지의 결실',
       title: '가을 볕 아래 말리는 태양초 고추',
@@ -226,7 +303,7 @@ const App = () => {
       date: '2025.09'
     },
     {
-      id: 7,
+      id: 11,
       cat: 'life',
       catName: '농원 일상',
       title: '목수 아빠의 집에서 웃는 반려견',
@@ -235,7 +312,7 @@ const App = () => {
       date: '2025.10'
     },
     {
-      id: 8,
+      id: 12,
       cat: 'life',
       catName: '농원 일상',
       title: '겨울 난로 앞 타닥타닥 타오르는 불멍',
@@ -244,7 +321,7 @@ const App = () => {
       date: '2025.12'
     },
     {
-      id: 9,
+      id: 13,
       cat: 'life',
       catName: '농원 일상',
       title: '천연 발효로 구운 소박한 빵',
@@ -558,7 +635,7 @@ const App = () => {
       <section id="retreat" className="py-24 md:py-36 px-6 border-b border-[#EDE6D8]">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <span className="text-[12px] uppercase tracking-[0.25em] text-[#7B8770] font-semibold block mb-3">
               Truebeing Meditation Center · Buyeo Campus
             </span>
@@ -567,70 +644,139 @@ const App = () => {
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
-              봄농원은 <strong className="font-medium text-[#222A1E]">현존명상센터의 부여캠퍼스</strong>로 가꾸어지고 있습니다.<br />
-              복잡한 도시 생활에 지친 회원들이 대지 위에 서서 호흡을 고르고, 깊은 침묵과 알아차림으로 내면을 회복하는 전용 수련처입니다.
+              봄농원은 <strong className="font-medium text-[#222A1E]">현존명상센터(Truebeing Meditation)의 부여캠퍼스</strong>입니다.<br />
+              성북동 본원이 도심 속 일상 수련과 1:1 심층 상담의 중심이라면, 이곳 부여캠퍼스는 대지 위에 서서 호흡을 고르고 침묵과 알아차림으로 내면을 회복하는 전용 수련처입니다.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
-            <div className="lg:col-span-6">
-              <div className="relative rounded-2xl overflow-hidden shadow-sm aspect-[4/5] bg-[#EAE4D7]">
-                <img
-                  src={signboardBom}
-                  alt="봄 있는 그대로 현존명상센터 부여캠퍼스 목재 간판"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/70 via-black/30 to-transparent text-white">
-                  <span className="text-[11px] uppercase tracking-widest text-[#E3DDD1] font-mono block mb-1">
-                    Signboard on the Hillside
-                  </span>
-                  <p className="font-serif text-lg">
-                    봄 : 있는 그대로 · 현존명상센터 부여캠퍼스
-                  </p>
-                </div>
+          {/* Dual Visual Showcase: Signboard & Fireplace Sanctuary */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div className="relative rounded-2xl overflow-hidden shadow-xs aspect-[4/3] bg-[#EAE4D7] group">
+              <img
+                src={signboardBom}
+                alt="봄 있는 그대로 현존명상센터 부여캠퍼스 목재 간판"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/75 via-black/30 to-transparent text-white">
+                <span className="text-[10px] uppercase tracking-widest text-[#E3DDD1] font-mono block mb-1">
+                  Buyeo Campus Signboard
+                </span>
+                <p className="font-serif text-base md:text-lg">
+                  봄 : 있는 그대로 · 현존명상센터 부여캠퍼스
+                </p>
               </div>
             </div>
 
-            <div className="lg:col-span-6 space-y-6">
-              <div className="space-y-4 text-[#444E3F] leading-relaxed text-[15px] font-light">
-                <p>
-                  도시의 빌딩 숲에서 실천하는 명상도 소중하지만, 바람의 결과 흙의 온기, 흙 속 미생물이 내뿜는 생명력 속에서 이루어지는 수련은 깊이가 다릅니다.
-                </p>
-                <p>
-                  부여캠퍼스는 1,800평 언덕 전체가 하나의 열린 명상실입니다. 나선형 만다라 정원에서의 호흡, 숲길 걷기 명상, 맨손으로 잡초를 베고 흙을 덮는 노동 명상까지—일상의 모든 행위가 온전한 '현존(Presence)'으로 이어집니다.
+            <div className="relative rounded-2xl overflow-hidden shadow-xs aspect-[4/3] bg-[#EAE4D7] group">
+              <img
+                src={buildFireplaceSanctuary}
+                alt="통창 숲 뷰와 타오르는 주물 벽난로가 있는 고요한 명상 쉼터"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/75 via-black/30 to-transparent text-white">
+                <span className="text-[10px] uppercase tracking-widest text-[#E3DDD1] font-mono block mb-1">
+                  Fireplace & Forest Sanctuary
+                </span>
+                <p className="font-serif text-base md:text-lg">
+                  통창 너머 숲과 따뜻한 벽난로 앞 명상실
                 </p>
               </div>
+            </div>
+          </div>
 
-              {/* 3 Core Retreat Offerings */}
-              <div className="space-y-3 pt-2">
-                <div className="p-4 rounded-xl bg-white border border-[#E8E1D3]">
-                  <h4 className="font-serif text-base font-bold text-[#232B1E] flex items-center gap-2">
-                    <Compass size={16} className="text-[#556B4E]" />
-                    <span>도시 회원 집중수련 & 리트릿 (Deep Practice)</span>
-                  </h4>
-                  <p className="text-xs text-[#63705C] mt-1 font-light leading-relaxed">
-                    주말 또는 일정 기간 동안 스마트폰을 내려놓고 침묵과 고요 속에서 자신의 내면을 깊이 응시하는 집중 명상 프로그램.
-                  </p>
+          {/* 3 Core Practices */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div className="p-6 rounded-2xl bg-white border border-[#E8E1D3] space-y-2.5">
+              <div className="w-10 h-10 rounded-xl bg-[#F4EFE6] flex items-center justify-center text-[#4A5D43]">
+                <Compass size={20} />
+              </div>
+              <h4 className="font-serif text-base font-bold text-[#232B1E]">
+                정통 사마타(Samatha) 집중수련
+              </h4>
+              <p className="text-xs text-[#63705C] font-light leading-relaxed">
+                마음의 실체를 통찰하고 생각의 소용돌이에서 벗어나는 알아차림. 과거와 미래라는 관념을 내려놓고 '지금 이 순간'의 순수한 현존에 머뭅니다.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#E8E1D3] space-y-2.5">
+              <div className="w-10 h-10 rounded-xl bg-[#F4EFE6] flex items-center justify-center text-[#4A5D43]">
+                <Sprout size={20} />
+              </div>
+              <h4 className="font-serif text-base font-bold text-[#232B1E]">
+                자연농 텃밭 노동 명상
+              </h4>
+              <p className="text-xs text-[#63705C] font-light leading-relaxed">
+                1,800평 언덕 숲밭에서 맨발로 흙을 딛고 풀을 베어 덮어주는 시간. 몸의 단순한 움직임 속에서 머리의 번뇌가 씻겨나갑니다.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#E8E1D3] space-y-2.5">
+              <div className="w-10 h-10 rounded-xl bg-[#F4EFE6] flex items-center justify-center text-[#4A5D43]">
+                <Flame size={20} />
+              </div>
+              <h4 className="font-serif text-base font-bold text-[#232B1E]">
+                통창 벽난로 불멍 & 차담
+              </h4>
+              <p className="text-xs text-[#63705C] font-light leading-relaxed">
+                숲을 마주하는 큰 창가, 타닥타닥 타오르는 장작 난로 앞에서 따뜻한 야생차를 마시며 삶의 본질을 나누는 깊은 쉼의 시간.
+              </p>
+            </div>
+          </div>
+
+          {/* Official Connection Banner with truebeing-meditation.com */}
+          <div className="p-8 md:p-10 rounded-3xl bg-[#F7F3EA] border border-[#E4DBCB] shadow-xs">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8 space-y-3.5">
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <span className="px-3 py-1 rounded-full bg-[#E5DEC9] text-[#3D4C37] text-[11px] font-semibold tracking-wide">
+                    정통 사마타명상 본원
+                  </span>
+                  <span className="text-xs text-[#6B7963]">
+                    서울 성북동 본원 ↔ 부여캠퍼스
+                  </span>
                 </div>
-
-                <div className="p-4 rounded-xl bg-white border border-[#E8E1D3]">
-                  <h4 className="font-serif text-base font-bold text-[#232B1E] flex items-center gap-2">
-                    <Sprout size={16} className="text-[#556B4E]" />
-                    <span>자연농 텃밭 노동 명상 (Working Meditation)</span>
-                  </h4>
-                  <p className="text-xs text-[#63705C] mt-1 font-light leading-relaxed">
-                    생각에 갇힌 뇌를 쉬게 하고 손발의 감각에 온전히 머물기. 씨앗을 심고 흙을 만지며 살아있는 대지와 하나 되는 경험.
-                  </p>
+                <h3 className="font-serif text-2xl md:text-3xl text-[#222A1E]">
+                  현존명상센터 (Truebeing Meditation)
+                </h3>
+                <p className="text-xs md:text-sm text-[#5B6753] font-light leading-relaxed">
+                  "굳어진 습관 · 감정의 기복 · 지친 일상... 삶은 의지로 바꾸는 것이 아닙니다. 정통 사마타 명상을 통해 마음에서 벗어나는 순간, 비로소 참된 나를 회복하는 변화가 시작됩니다."
+                </p>
+                <div className="pt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[#6E7B67]">
+                  <span>📍 서울 본원: 성북구 성북로 15길 15-2 (최순우 옛집 골목 안 2F)</span>
+                  <span>📞 010-3188-3105</span>
                 </div>
+              </div>
 
-                <div className="p-4 rounded-xl bg-white border border-[#E8E1D3]">
-                  <h4 className="font-serif text-base font-bold text-[#232B1E] flex items-center gap-2">
-                    <Coffee size={16} className="text-[#556B4E]" />
-                    <span>차담과 자연치유 식탁 (Tea & Mindful Dining)</span>
-                  </h4>
-                  <p className="text-xs text-[#63705C] mt-1 font-light leading-relaxed">
-                    직접 덖은 야생 허브차와 제철 자연농 식재료로 차리는 정갈한 식사로 몸의 체질과 자연치유력을 깨웁니다.
-                  </p>
+              <div className="lg:col-span-4 flex flex-col gap-3">
+                <a
+                  href="https://truebeing-meditation.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-[#44553F] hover:bg-[#32402E] text-white text-xs tracking-wider transition-all shadow-xs group"
+                >
+                  <span className="font-medium">명상센터 공식 사이트 방문</span>
+                  <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href="https://cafe.naver.com/bhakti"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-white border border-[#DDD3C2] hover:bg-[#FAF8F5] text-[11px] text-[#485542] transition-colors"
+                  >
+                    <span>수련생 카페</span>
+                    <ArrowUpRight size={11} />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/truebeing_meditation/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-white border border-[#DDD3C2] hover:bg-[#FAF8F5] text-[11px] text-[#485542] transition-colors"
+                  >
+                    <span>공식 인스타그램</span>
+                    <ArrowUpRight size={11} />
+                  </a>
                 </div>
               </div>
             </div>
@@ -1094,45 +1240,91 @@ const App = () => {
       </section>
 
       {/* ──────────────────────────────────────────
-          Section 5: 우리 농원의 주요 연혁 (새로 추가!)
+          Section 5: 우리 농원의 주요 연혁 & 건축 기록
       ────────────────────────────────────────── */}
       <section id="milestones" className="py-24 md:py-36 px-6 border-b border-[#EDE6D8]">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-20">
             <span className="text-[12px] uppercase tracking-[0.25em] text-[#7B8770] font-semibold block mb-3">
-              Milestones & Journey
+              Milestones & Architectural Journey
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-[#222A1E] tracking-tight">
-              봄농원이 걸어온 발자취
+              봄농원이 걸어온 발자취와 건축 기록
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-xl mx-auto leading-relaxed text-sm md:text-base font-light">
-              대지 위에 뿌리를 내리고 생명과 호흡해 온 시간들입니다.
+              대지의 물길을 읽던 첫 손글씨 스케치부터 목구조와 붉은 고벽돌, 그리고 따뜻한 벽난로가 타오르기까지—우리의 손으로 지어 올린 정직한 시간들입니다.
             </p>
           </div>
 
           {/* Timeline Vertical Path */}
-          <div className="relative border-l-2 border-[#DCD3C1] ml-4 md:ml-24 space-y-12 pl-6 md:pl-10">
+          <div className="relative border-l-2 border-[#DCD3C1] ml-3 md:ml-12 space-y-16 pl-6 md:pl-10">
             {farmMilestones.map((milestone, idx) => (
               <div key={idx} className="relative group">
                 {/* Timeline Dot */}
-                <div className="absolute -left-[31px] md:-left-[47px] top-1 w-4 h-4 rounded-full bg-[#52634B] border-4 border-[#FCFBF7] shadow-xs"></div>
+                <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-[#52634B] border-4 border-[#FCFBF7] shadow-xs"></div>
 
-                <div className="space-y-2">
-                  <div className="flex items-baseline gap-3">
-                    <span className="font-serif text-2xl font-bold text-[#232B1E]">
-                      {milestone.year}
-                    </span>
-                    <span className="text-xs font-semibold text-[#66785E] uppercase tracking-wider">
+                <div className="space-y-4">
+                  {/* Header */}
+                  <div>
+                    <div className="flex flex-wrap items-baseline gap-2.5 mb-1">
+                      <span className="font-serif text-2xl md:text-3xl font-bold text-[#232B1E]">
+                        {milestone.year}
+                      </span>
+                      <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-[#EDE6D8] text-[#55634E]">
+                        {milestone.period}
+                      </span>
+                    </div>
+                    <h3 className="font-serif text-lg md:text-xl font-bold text-[#2C3726]">
                       {milestone.title}
-                    </span>
+                    </h3>
+                    <p className="text-xs text-[#707F69] font-light mt-0.5">
+                      {milestone.subtitle}
+                    </p>
                   </div>
 
-                  <div className="p-5 rounded-2xl bg-white border border-[#E9E2D4] space-y-2">
+                  {/* Photo Display */}
+                  {milestone.image && (
+                    <div className="rounded-2xl overflow-hidden border border-[#E5DDD0] bg-[#F5EFE4] max-w-xl">
+                      <img
+                        src={milestone.image}
+                        alt={milestone.title}
+                        className="w-full max-h-[360px] object-cover"
+                      />
+                      {milestone.imageCaption && (
+                        <div className="p-3 bg-white/90 border-t border-[#EAE3D4] text-[11px] text-[#63725D] font-light">
+                          📷 {milestone.imageCaption}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* 4-Image Grid for Construction (2024 상반기) */}
+                  {milestone.images && (
+                    <div className="grid grid-cols-2 gap-3 max-w-xl">
+                      {milestone.images.map((imgItem, i) => (
+                        <div key={i} className="rounded-xl overflow-hidden border border-[#E6DFD2] bg-white group/img">
+                          <div className="aspect-[4/3] overflow-hidden">
+                            <img
+                              src={imgItem.src}
+                              alt={imgItem.label}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                            />
+                          </div>
+                          <div className="p-2 text-[10px] text-[#566450] font-light bg-[#FAF7F1] truncate">
+                            {imgItem.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Content List */}
+                  <div className="p-5 md:p-6 rounded-2xl bg-white border border-[#E9E2D4] space-y-2.5 max-w-xl">
                     {milestone.items.map((it, i) => (
-                      <div key={i} className="flex items-start gap-2.5 text-xs text-[#52604C] font-light leading-relaxed">
-                        <span className="text-[#788870] font-bold mt-0.5">•</span>
+                      <div key={i} className="flex items-start gap-2.5 text-xs md:text-sm text-[#4F5D49] font-light leading-relaxed">
+                        <span className="text-[#65795C] font-bold mt-1 text-[10px]">■</span>
                         <span>{it}</span>
                       </div>
                     ))}
