@@ -1,38 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-farm-50: #F9F7F2;
-  --color-farm-100: #F0EBE0;
-  --color-farm-200: #E6D5C3;
-  --color-farm-300: #C9B198;
-  --color-farm-400: #8A9A5B;
-  --color-farm-500: #4B5E40;
-  --color-farm-600: #3D4D34;
-  --color-farm-700: #2C3327;
-  --color-farm-800: #1A1F18;
-  --color-farm-950: #0F120E;
+  --color-farm-50: #FCFBF7;
+  --color-farm-100: #F6F2E9;
+  --color-farm-200: #EAE3D4;
+  --color-farm-300: #C8BCAB;
+  --color-farm-400: #7B8770;
+  --color-farm-500: #556B4E;
+  --color-farm-600: #3D4F37;
+  --color-farm-700: #2C3827;
+  --color-farm-800: #222A1E;
+  --color-farm-900: #161C13;
 
-  --font-serif: "Gowun Batang", "Noto Serif KR", serif;
-  --font-sans: "Gowun Batang", "Noto Sans KR", sans-serif;
+  --font-serif: "Gowun Batang", "Noto Serif KR", Georgia, serif;
+  --font-sans: "Gowun Batang", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-farm-50 text-farm-700;
+    background-color: #FCFBF7;
+    color: #2C3228;
+    font-family: var(--font-sans);
+    word-break: keep-all;
+    overflow-x: hidden;
   }
 }
 
-@layer components {
-  .section-title {
-    @apply font-serif text-3xl md:text-4xl text-farm-500 mb-6;
-  }
-
-  .section-subtitle {
-    @apply font-serif text-lg md:text-xl text-farm-300 mb-12 tracking-wide;
-  }
-}
-
-/* Smooth scrolling for anchor links */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Gentle image transitions */
+img {
+  user-select: none;
 }
