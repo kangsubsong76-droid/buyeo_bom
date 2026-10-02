@@ -23,7 +23,12 @@ import {
   Compass,
   Smile,
   ShieldCheck,
-  Quote
+  Quote,
+  Users,
+  Briefcase,
+  History,
+  FolderOpen,
+  CheckCircle2
 } from 'lucide-react';
 
 // Curated authentic images
@@ -60,6 +65,8 @@ const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSeason, setActiveSeason] = useState('spring');
+  const [activeProgramTab, setActiveProgramTab] = useState('meditation');
+  const [activeArchiveCategory, setActiveArchiveCategory] = useState('all');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -120,6 +127,136 @@ const App = () => {
       img: stoveFire
     }
   ];
+
+  // Farm History & Milestones
+  const farmMilestones = [
+    {
+      year: '2023',
+      title: '터잡기와 손수 지은 집',
+      items: [
+        '도시 생활을 정리하고 충남 부여군 임천면 1,800평 평온한 언덕에 터를 잡음',
+        '가구 목수 남편, 지역 목수님과 함께 살림집 및 스튜디오 나무다움 목공소 직영 착공 및 완공',
+        '3무(無) 원칙(무경운·무화학비료·자연멀칭) 자연농·퍼머컬처 텃밭 조성 개간'
+      ]
+    },
+    {
+      year: '2024',
+      title: '현존캠퍼스 지정 & 생태 인프라',
+      items: [
+        '현존명상센터 부여캠퍼스 지정 (도시 회원 집중수련 및 리트릿 공간)',
+        '6kW 친환경 태양광 발전 및 지하수·빗물 집수 시스템 구축',
+        '독립 욕실과 주방을 갖춘 프라이빗 게스트룸 완공',
+        '조선시대 전통 석빙고 시설 정비 및 농산물 자연저장 시작'
+      ]
+    },
+    {
+      year: '2025',
+      title: '치유 프로그램 런칭 & 우프 교류',
+      items: [
+        'WWOOF Korea 공식 호스트 등록, 국내외 청년·생태 활동가들과 우핑 교류',
+        '나선형 만다라 허브 명상 정원(Spiral Garden) 완공',
+        '도시 회원 주말 정기 현존 리트릿 및 가족 힐링 프로그램 본격 운영',
+        '토종밤·고구마 수확 및 저온압착 생들기름 짜기 갈무리'
+      ]
+    },
+    {
+      year: '2026',
+      title: '기업 웰니스 확장 & 온전한 안착',
+      items: [
+        '직무 스트레스 및 번아웃 극복을 위한 기업·단체 그린 리커버리(Green Recovery) 프로그램 런칭',
+        '생태, 순환, 그리고 일상 속 알아차림이 숨 쉬는 명상농원으로 자리매김'
+      ]
+    }
+  ];
+
+  // Farm Archive Gallery
+  const archiveItems = [
+    {
+      id: 1,
+      cat: 'build',
+      catName: '집 짓던 날',
+      title: '지역 목수님과 함께 올린 서까래',
+      desc: '기계음 대신 망치 소리와 톱밥 냄새로 채워졌던 2023년의 봄. 우리 손으로 흙 위에 쉼터를 지었습니다.',
+      img: carpenterFriends,
+      date: '2023.05'
+    },
+    {
+      id: 2,
+      cat: 'build',
+      catName: '집 짓던 날',
+      title: '벽돌집과 목공소가 자리 잡다',
+      desc: '햇살이 잘 드는 언덕에 붉은 벽돌집과 은빛 목공소가 완성되었습니다.',
+      img: farmHouses,
+      date: '2023.09'
+    },
+    {
+      id: 3,
+      cat: 'craft',
+      catName: '스튜디오 나무다움',
+      title: '대패질 끝에 드러나는 나뭇결',
+      desc: '인위적인 코팅 없이 자연 원목 그대로의 결을 살려 농원의 살림살이를 만듭니다.',
+      img: woodCraftsmanHands,
+      date: '2024.03'
+    },
+    {
+      id: 4,
+      cat: 'nature',
+      catName: '대지의 결실',
+      title: '6월 첫 햇감자의 선물',
+      desc: '비료도 농약도 없이 대지가 품어준 포슬포슬한 햇감자를 손으로 거두던 벅찬 날.',
+      img: harvestPotatoes,
+      date: '2024.06'
+    },
+    {
+      id: 5,
+      cat: 'mind',
+      catName: '명상과 쉼',
+      title: '나선형 만다라 텃밭의 첫 아침',
+      desc: '중심을 향해 둥글게 돌아가는 만다라 허브밭에서 맞이한 평온한 현존의 시간.',
+      img: mandalaMindfulness,
+      date: '2025.04'
+    },
+    {
+      id: 6,
+      cat: 'nature',
+      catName: '대지의 결실',
+      title: '가을 볕 아래 말리는 태양초 고추',
+      desc: '임천면의 맑은 가을 햇살과 솔바람으로 천천히 말려가는 붉은 고추들.',
+      img: dryingPeppers,
+      date: '2025.09'
+    },
+    {
+      id: 7,
+      cat: 'life',
+      catName: '농원 일상',
+      title: '목수 아빠의 집에서 웃는 반려견',
+      desc: '원목으로 지어준 아늑한 집 문을 열고 다정하게 손님을 맞는 농원의 단짝.',
+      img: farmDog,
+      date: '2025.10'
+    },
+    {
+      id: 8,
+      cat: 'life',
+      catName: '농원 일상',
+      title: '겨울 난로 앞 타닥타닥 타오르는 불멍',
+      desc: '바깥의 찬 공기를 뒤로하고 장작 난로 불꽃을 마주하며 마음의 짐을 내려놓습니다.',
+      img: stoveFire,
+      date: '2025.12'
+    },
+    {
+      id: 9,
+      cat: 'life',
+      catName: '농원 일상',
+      title: '천연 발효로 구운 소박한 빵',
+      desc: '농원의 아침을 열어주는 구수한 빵 내음. 느리게 발효되어 속이 편안한 식탁.',
+      img: rusticBread,
+      date: '2026.02'
+    }
+  ];
+
+  const filteredArchive = activeArchiveCategory === 'all'
+    ? archiveItems
+    : archiveItems.filter(item => item.cat === activeArchiveCategory);
 
   // Curiosity FAQ / Personal stories
   const personalNotes = [
@@ -261,23 +398,25 @@ const App = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8 text-[14px] font-medium text-[#4A5445]">
+          <div className="hidden xl:flex items-center space-x-7 text-[13.5px] font-medium text-[#4A5445]">
             <a href="#retreat" className="hover:text-[#1F251B] transition-colors text-[#43573C] font-bold">현존캠퍼스</a>
             <a href="#couple" className="hover:text-[#1F251B] transition-colors">부부 이야기</a>
+            <a href="#programs" className="hover:text-[#1F251B] transition-colors">치유 프로그램</a>
+            <a href="#archive" className="hover:text-[#1F251B] transition-colors">농원 아카이브</a>
+            <a href="#milestones" className="hover:text-[#1F251B] transition-colors">주요 연혁</a>
             <a href="#daily" className="hover:text-[#1F251B] transition-colors">농원의 하루</a>
             <a href="#farming" className="hover:text-[#1F251B] transition-colors">자연농 숲밭</a>
-            <a href="#woodcraft" className="hover:text-[#1F251B] transition-colors">나무다움</a>
-            <a href="#stay" className="hover:text-[#1F251B] transition-colors">머무름과 우핑</a>
-            <a href="#instagram" className="hover:text-[#1F251B] transition-colors flex items-center gap-1.5 text-[#556B4E]">
-              <Instagram size={15} />
-              <span>인스타그램</span>
+            <a href="#stay" className="hover:text-[#1F251B] transition-colors">머무름·우핑</a>
+            <a href="#instagram" className="hover:text-[#1F251B] transition-colors flex items-center gap-1 text-[#556B4E]">
+              <Instagram size={14} />
+              <span>인스타</span>
             </a>
           </div>
 
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#2C3228] hover:text-[#52634B] focus:outline-none"
+            className="xl:hidden p-2 text-[#2C3228] hover:text-[#52634B] focus:outline-none"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -286,7 +425,7 @@ const App = () => {
 
         {/* Mobile Dropdown Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#FAF7F0] border-b border-[#EAE3D2] px-6 py-6 space-y-4 animate-in fade-in duration-300">
+          <div className="xl:hidden bg-[#FAF7F0] border-b border-[#EAE3D2] px-6 py-6 space-y-3.5 animate-in fade-in duration-300">
             <a
               href="#retreat"
               onClick={() => setMobileMenuOpen(false)}
@@ -302,6 +441,27 @@ const App = () => {
               호스트 부부 이야기
             </a>
             <a
+              href="#programs"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base text-[#404A3A] font-medium py-1"
+            >
+              치유 & 명상 프로그램 (명상 / 개인·가족 / 기업)
+            </a>
+            <a
+              href="#archive"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base text-[#404A3A] font-medium py-1"
+            >
+              농원 아카이브 (기록과 순간들)
+            </a>
+            <a
+              href="#milestones"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base text-[#404A3A] font-medium py-1"
+            >
+              농원의 주요 연혁
+            </a>
+            <a
               href="#daily"
               onClick={() => setMobileMenuOpen(false)}
               className="block text-base text-[#404A3A] font-medium py-1"
@@ -314,13 +474,6 @@ const App = () => {
               className="block text-base text-[#404A3A] font-medium py-1"
             >
               자연농 숲밭 & 퍼머컬처
-            </a>
-            <a
-              href="#woodcraft"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-[#404A3A] font-medium py-1"
-            >
-              스튜디오 나무다움
             </a>
             <a
               href="#stay"
@@ -378,16 +531,16 @@ const App = () => {
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
-              href="#retreat"
+              href="#programs"
               className="px-7 py-3 rounded-full bg-[#3D4F37] text-[#FAF8F2] text-sm font-medium hover:bg-[#2F3E2A] transition-all shadow-sm"
             >
-              현존캠퍼스 안내
+              치유 프로그램 보기
             </a>
             <a
-              href="#daily"
+              href="#archive"
               className="px-7 py-3 rounded-full bg-[#FCFBF7]/85 backdrop-blur-sm border border-[#DCD3C0] text-[#3D4F37] text-sm font-medium hover:bg-[#FCFBF7] transition-all"
             >
-              농원의 일상 보기
+              농원 아카이브
             </a>
           </div>
         </div>
@@ -621,9 +774,380 @@ const App = () => {
       </section>
 
       {/* ──────────────────────────────────────────
-          Section 3: A Day at Bom Farm (농원의 하루 비주얼 타임라인)
+          Section 3: 치유 & 명상 프로그램 (새로 추가!)
       ────────────────────────────────────────── */}
-      <section id="daily" className="py-24 md:py-36 px-6 border-b border-[#EDE6D8]">
+      <section id="programs" className="py-24 md:py-36 px-6 border-b border-[#EDE6D8]">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <span className="text-[12px] uppercase tracking-[0.25em] text-[#7B8770] font-semibold block mb-3">
+              Healing & Mindfulness Programs
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-[#222A1E] tracking-tight">
+              봄농원의 치유 & 명상 프로그램
+            </h2>
+            <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
+            <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
+              내면의 고요를 찾는 명상부터 소중한 이들과 함께하는 개인·가족 쉼표, 조직의 회복을 돕는 기업 웰니스까지.<br />
+              자연의 속도에 맞춰 깊은 회복을 선물하는 맞춤형 프로그램을 운영합니다.
+            </p>
+
+            {/* Program Tabs */}
+            <div className="flex flex-wrap justify-center gap-2 mt-10">
+              <button
+                onClick={() => setActiveProgramTab('meditation')}
+                className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all ${
+                  activeProgramTab === 'meditation'
+                    ? 'bg-[#3D4F37] text-white shadow-xs font-bold'
+                    : 'bg-white text-[#56634F] border border-[#DDD3C2] hover:bg-[#F4EFE5]'
+                }`}
+              >
+                부여 농원 명상 프로그램
+              </button>
+              <button
+                onClick={() => setActiveProgramTab('family')}
+                className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all ${
+                  activeProgramTab === 'family'
+                    ? 'bg-[#3D4F37] text-white shadow-xs font-bold'
+                    : 'bg-white text-[#56634F] border border-[#DDD3C2] hover:bg-[#F4EFE5]'
+                }`}
+              >
+                개인 / 가족 힐링 (1회성 · 정기)
+              </button>
+              <button
+                onClick={() => setActiveProgramTab('corporate')}
+                className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all ${
+                  activeProgramTab === 'corporate'
+                    ? 'bg-[#3D4F37] text-white shadow-xs font-bold'
+                    : 'bg-white text-[#56634F] border border-[#DDD3C2] hover:bg-[#F4EFE5]'
+                }`}
+              >
+                기업 & 조직 웰니스 리트릿
+              </button>
+            </div>
+          </div>
+
+          {/* Program Tab 1: 부여 농원 명상 프로그램 */}
+          {activeProgramTab === 'meditation' && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-in fade-in duration-300">
+              <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs">
+                <div>
+                  <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
+                    <Wind size={20} />
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1">숲밭 걷기 명상</h3>
+                  <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">Walking Meditation</p>
+                  <p className="text-xs text-[#54604F] leading-relaxed font-light">
+                    1,800평 언덕길을 침묵 속에서 천천히 걸으며, 발바닥에 닿는 대지의 결감과 산바람, 새소리에 오감을 활짝 깨웁니다.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">소요: 60분 · 야외 숲길</div>
+              </div>
+
+              <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs">
+                <div>
+                  <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
+                    <Compass size={20} />
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1">만다라 호흡 명상</h3>
+                  <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">Mandala Spiral Breath</p>
+                  <p className="text-xs text-[#54604F] leading-relaxed font-light">
+                    나선형으로 배치된 만다라 허브밭 중심에서 자신의 들숨과 날숨에 주의를 모으고, 흩어진 생각을 편안히 가라앉힙니다.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">소요: 50분 · 만다라 정원</div>
+              </div>
+
+              <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs">
+                <div>
+                  <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
+                    <Coffee size={20} />
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1">감각을 깨우는 차담(茶談)</h3>
+                  <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">Mindful Tea Ceremony</p>
+                  <p className="text-xs text-[#54604F] leading-relaxed font-light">
+                    농원에서 직접 덖은 야생 허브차를 우려내어 찻잔의 온기와 향기를 천천히 음미하고, 편견 없이 마음을 나누는 찻자리.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">소요: 60분 · 실내 다도실</div>
+              </div>
+
+              <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs">
+                <div>
+                  <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
+                    <Flame size={20} />
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1">난롯가 불멍 침묵 명상</h3>
+                  <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">Fireplace Stillness</p>
+                  <p className="text-xs text-[#54604F] leading-relaxed font-light">
+                    타닥타닥 타오르는 참나무 장작 난로 불꽃을 묵묵히 바라보며 복잡한 뇌의 과열을 끄고 깊은 평온과 이완으로 들어갑니다.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">소요: 60분 · 저녁/동절기</div>
+              </div>
+            </div>
+          )}
+
+          {/* Program Tab 2: 개인 / 가족 힐링 프로그램 (1회성, 정기) */}
+          {activeProgramTab === 'family' && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-in fade-in duration-300">
+              {/* 1회성 프로그램 */}
+              <div className="p-8 rounded-2xl bg-white border border-[#E8E1D3] space-y-5 shadow-xs flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F3EDE2] text-[#4E6146] text-xs font-semibold">
+                    <Sparkles size={13} />
+                    <span>1회성 원데이 힐링</span>
+                  </div>
+                  <h3 className="font-serif text-2xl font-bold text-[#232B1E]">
+                    '원데이 마음 쉼표' 프로그램
+                  </h3>
+                  <p className="text-xs text-[#5B6754] leading-relaxed font-light">
+                    하루 동안 도시의 시계를 멈추고 온전히 자연의 품에서 나 자신, 혹은 소중한 가족과 머무는 당일 힐링 코스입니다.
+                  </p>
+
+                  <div className="space-y-3 pt-2">
+                    <div className="flex items-start gap-3 text-xs text-[#4F5C4A] font-light">
+                      <CheckCircle2 size={16} className="text-[#556B4E] shrink-0 mt-0.5" />
+                      <div><strong>숲밭 산책 & 호흡 명상</strong>: 언덕길을 걸으며 굳어진 몸과 호흡을 편안히 이완</div>
+                    </div>
+                    <div className="flex items-start gap-3 text-xs text-[#4F5C4A] font-light">
+                      <CheckCircle2 size={16} className="text-[#556B4E] shrink-0 mt-0.5" />
+                      <div><strong>자연치유 제철 밥상</strong>: 텃밭에서 갓 수확한 채소와 발효빵으로 차린 마인드풀 식사</div>
+                    </div>
+                    <div className="flex items-start gap-3 text-xs text-[#4F5C4A] font-light">
+                      <CheckCircle2 size={16} className="text-[#556B4E] shrink-0 mt-0.5" />
+                      <div><strong>목공 손작업 또는 찻자리</strong>: 나무 숟가락 깎기 손작업 또는 따스한 차담</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-[#F2EDE2] text-xs text-[#707D68] flex justify-between items-center">
+                  <span>대상: 개인, 커플, 부모님과 함께하는 가족 (소수 정예)</span>
+                  <span className="font-medium text-[#3D4F37]">사전 예약제</span>
+                </div>
+              </div>
+
+              {/* 정기 프로그램 */}
+              <div className="p-8 rounded-2xl bg-white border border-[#E8E1D3] space-y-5 shadow-xs flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBF2E6] text-[#3D5434] text-xs font-semibold">
+                    <Calendar size={13} />
+                    <span>정기 힐링 스테이</span>
+                  </div>
+                  <h3 className="font-serif text-2xl font-bold text-[#232B1E]">
+                    '사계절 정기 쉼 스테이' (1박 2일)
+                  </h3>
+                  <p className="text-xs text-[#5B6754] leading-relaxed font-light">
+                    계절의 변화에 맞춰 정기적으로 찾아와 내면의 안정을 되찾는 1박 2일 체류형 힐링 프로그램입니다.
+                  </p>
+
+                  <div className="space-y-3 pt-2">
+                    <div className="flex items-start gap-3 text-xs text-[#4F5C4A] font-light">
+                      <CheckCircle2 size={16} className="text-[#556B4E] shrink-0 mt-0.5" />
+                      <div><strong>주말 현존 리트릿</strong>: 디지털 디톡스와 침묵 명상으로 깊은 내면의 휴식</div>
+                    </div>
+                    <div className="flex items-start gap-3 text-xs text-[#4F5C4A] font-light">
+                      <CheckCircle2 size={16} className="text-[#556B4E] shrink-0 mt-0.5" />
+                      <div><strong>사계절 흙과의 교감</strong>: 봄 파종, 여름 감자, 가을 밤 줍기, 겨울 장작 패기</div>
+                    </div>
+                    <div className="flex items-start gap-3 text-xs text-[#4F5C4A] font-light">
+                      <CheckCircle2 size={16} className="text-[#556B4E] shrink-0 mt-0.5" />
+                      <div><strong>체질별 자연치유 코칭</strong>: 아내 호스트의 동양의학 기반 1:1 라이프스타일 조언</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-[#F2EDE2] text-xs text-[#707D68] flex justify-between items-center">
+                  <span>숙소: 독립 욕실·주방 갖춘 전용 게스트룸</span>
+                  <span className="font-medium text-[#3D4F37]">월간 정기 운영</span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Program Tab 3: 기업 프로그램 */}
+          {activeProgramTab === 'corporate' && (
+            <div className="bg-white rounded-2xl border border-[#E8E1D3] p-8 md:p-12 shadow-xs animate-in fade-in duration-300">
+              <div className="max-w-3xl mx-auto space-y-8">
+                <div className="text-center space-y-2">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAE3D4] text-[#4F5B49] text-xs font-semibold mb-2">
+                    <Briefcase size={13} />
+                    <span>Corporate Wellness & Team Retreat</span>
+                  </div>
+                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-[#232B1E]">
+                    조직의 번아웃을 씻어내는 '그린 리커버리(Green Recovery)'
+                  </h3>
+                  <p className="text-xs md:text-sm text-[#5C6B55] leading-relaxed font-light">
+                    치열한 성과 압박과 디지털 스트레스에 지친 임직원 및 팀을 위한 맞춤형 자연 웰니스 워크숍.
+                    인사컨설팅 및 코칭 경력의 호스트가 조직의 맥락을 깊이 이해하고 회복 솔루션을 제공합니다.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                  <div className="p-5 rounded-xl bg-[#FCFBF7] border border-[#EAE3D4] space-y-2">
+                    <h4 className="font-serif text-base font-bold text-[#232B1E]">번아웃 치유 리셋</h4>
+                    <p className="text-xs text-[#5E6D57] leading-relaxed font-light">
+                      스마트폰을 끄고 자연의 소리에 온전히 귀 기울이는 숲길 침묵 걷기 명상과 신체 이완 스트레칭.
+                    </p>
+                  </div>
+                  <div className="p-5 rounded-xl bg-[#FCFBF7] border border-[#EAE3D4] space-y-2">
+                    <h4 className="font-serif text-base font-bold text-[#232B1E]">마인드풀 팀빌딩</h4>
+                    <p className="text-xs text-[#5E6D57] leading-relaxed font-light">
+                      나선형 정원 앞 찻자리(차담)를 통해 계급장을 떼고 서로의 마음에 진솔하게 귀 기울이는 경청 워크숍.
+                    </p>
+                  </div>
+                  <div className="p-5 rounded-xl bg-[#FCFBF7] border border-[#EAE3D4] space-y-2">
+                    <h4 className="font-serif text-base font-bold text-[#232B1E]">원목 공예 몰입</h4>
+                    <p className="text-xs text-[#5E6D57] leading-relaxed font-light">
+                      스튜디오 나무다움에서 손으로 직접 나무를 깎고 다듬으며 뇌의 복잡함을 비워내는 손작업 테라피.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-[#F6F1E7] border border-[#E4DBCB] text-center text-xs text-[#4F5B49] font-light">
+                  ※ 기업/기관의 규모(10인 내외 소규모 집중형)와 목적에 맞추어 <strong>반일(Half-day), 당일(Full-day), 1박 2일 맞춤형 커리큘럼</strong>을 설계해 드립니다.
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ──────────────────────────────────────────
+          Section 4: 우리 농원 아카이브 (새로 추가!)
+      ────────────────────────────────────────── */}
+      <section id="archive" className="py-24 md:py-36 px-6 bg-white border-b border-[#EDE6D8]">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <span className="text-[12px] uppercase tracking-[0.25em] text-[#7B8770] font-semibold block mb-3">
+              Farm Archive & Memories
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-[#222A1E] tracking-tight">
+              봄농원의 기록과 기억들
+            </h2>
+            <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
+            <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
+              빈 언덕에 집을 짓던 땀방울부터 흙이 안겨준 첫 감자 수확, 사계절의 결을 따라 쌓여온 농원의 소중한 순간들을 모았습니다.
+            </p>
+
+            {/* Archive Category Filter */}
+            <div className="flex flex-wrap justify-center gap-2 mt-8">
+              {[
+                { key: 'all', label: '전체 보기' },
+                { key: 'build', label: '집 짓던 날' },
+                { key: 'craft', label: '스튜디오 나무다움' },
+                { key: 'nature', label: '대지의 결실' },
+                { key: 'mind', label: '명상과 쉼' },
+                { key: 'life', label: '농원 일상' }
+              ].map(filter => (
+                <button
+                  key={filter.key}
+                  onClick={() => setActiveArchiveCategory(filter.key)}
+                  className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${
+                    activeArchiveCategory === filter.key
+                      ? 'bg-[#2E3C29] text-white font-bold'
+                      : 'bg-[#F6F2E9] text-[#55634F] hover:bg-[#EAE4D7]'
+                  }`}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Archive Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredArchive.map(item => (
+              <div
+                key={item.id}
+                className="bg-[#FCFBF7] rounded-2xl overflow-hidden border border-[#EAE3D4] shadow-xs flex flex-col hover:border-[#CAD2C3] transition-all"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-[#FAF6EE] relative">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-xs text-white text-[10.5px] font-mono">
+                    {item.date}
+                  </div>
+                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/85 text-[#3D4F37] text-[10.5px] font-medium">
+                    {item.catName}
+                  </div>
+                </div>
+
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-serif text-base font-bold text-[#232B1E] mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-[#5C6A55] leading-relaxed font-light">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────────────────────────────
+          Section 5: 우리 농원의 주요 연혁 (새로 추가!)
+      ────────────────────────────────────────── */}
+      <section id="milestones" className="py-24 md:py-36 px-6 border-b border-[#EDE6D8]">
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <span className="text-[12px] uppercase tracking-[0.25em] text-[#7B8770] font-semibold block mb-3">
+              Milestones & Journey
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-[#222A1E] tracking-tight">
+              봄농원이 걸어온 발자취
+            </h2>
+            <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
+            <p className="text-[#5E6B56] max-w-xl mx-auto leading-relaxed text-sm md:text-base font-light">
+              대지 위에 뿌리를 내리고 생명과 호흡해 온 시간들입니다.
+            </p>
+          </div>
+
+          {/* Timeline Vertical Path */}
+          <div className="relative border-l-2 border-[#DCD3C1] ml-4 md:ml-24 space-y-12 pl-6 md:pl-10">
+            {farmMilestones.map((milestone, idx) => (
+              <div key={idx} className="relative group">
+                {/* Timeline Dot */}
+                <div className="absolute -left-[31px] md:-left-[47px] top-1 w-4 h-4 rounded-full bg-[#52634B] border-4 border-[#FCFBF7] shadow-xs"></div>
+
+                <div className="space-y-2">
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-serif text-2xl font-bold text-[#232B1E]">
+                      {milestone.year}
+                    </span>
+                    <span className="text-xs font-semibold text-[#66785E] uppercase tracking-wider">
+                      {milestone.title}
+                    </span>
+                  </div>
+
+                  <div className="p-5 rounded-2xl bg-white border border-[#E9E2D4] space-y-2">
+                    {milestone.items.map((it, i) => (
+                      <div key={i} className="flex items-start gap-2.5 text-xs text-[#52604C] font-light leading-relaxed">
+                        <span className="text-[#788870] font-bold mt-0.5">•</span>
+                        <span>{it}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────────────────────────────
+          Section 6: A Day at Bom Farm (농원의 하루 비주얼 타임라인)
+      ────────────────────────────────────────── */}
+      <section id="daily" className="py-24 md:py-36 px-6 bg-white border-b border-[#EDE6D8]">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-20">
@@ -645,7 +1169,7 @@ const App = () => {
             {dailyTimeline.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl overflow-hidden border border-[#EAE3D4] shadow-xs flex flex-col hover:border-[#CAD2C3] transition-all"
+                className="bg-[#FCFBF7] rounded-2xl overflow-hidden border border-[#EAE3D4] shadow-xs flex flex-col hover:border-[#CAD2C3] transition-all"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-[#FAF6EE]">
                   <img
@@ -678,7 +1202,7 @@ const App = () => {
       </section>
 
       {/* ──────────────────────────────────────────
-          Section 4: Curiosity Notes & Personal Q&A
+          Section 7: Curiosity Notes & Personal Q&A
       ────────────────────────────────────────── */}
       <section className="py-20 md:py-28 px-6 bg-[#F8F5EE] border-b border-[#EDE6D8]">
         <div className="max-w-5xl mx-auto">
@@ -711,7 +1235,7 @@ const App = () => {
       </section>
 
       {/* ──────────────────────────────────────────
-          Section 5: Living Soil & Natural Farming (자연농 & 퍼머컬처)
+          Section 8: Living Soil & Natural Farming (자연농 & 퍼머컬처)
       ────────────────────────────────────────── */}
       <section id="farming" className="py-24 md:py-36 px-6 bg-white border-b border-[#EDE6D8]">
         <div className="max-w-6xl mx-auto">
@@ -835,7 +1359,7 @@ const App = () => {
       </section>
 
       {/* ──────────────────────────────────────────
-          Section 6: Studio Simplewood & Sustainable Living (목공 & 생태적 살림)
+          Section 9: Studio Simplewood & Sustainable Living (목공 & 생태적 살림)
       ────────────────────────────────────────── */}
       <section id="woodcraft" className="py-24 md:py-36 px-6 border-b border-[#EDE6D8]">
         <div className="max-w-6xl mx-auto">
@@ -905,7 +1429,7 @@ const App = () => {
       </section>
 
       {/* ──────────────────────────────────────────
-          Section 7: Animals & Table (농원의 동물 친구들과 소박한 식탁)
+          Section 10: Animals & Table (농원의 동물 친구들과 소박한 식탁)
       ────────────────────────────────────────── */}
       <section className="py-24 md:py-36 px-6 bg-white border-b border-[#EDE6D8]">
         <div className="max-w-6xl mx-auto">
@@ -990,7 +1514,7 @@ const App = () => {
       </section>
 
       {/* ──────────────────────────────────────────
-          Section 8: Stay & WWOOF (머무름과 우핑 안내 & 캘린더)
+          Section 11: Stay & WWOOF (머무름과 우핑 안내 & 캘린더)
       ────────────────────────────────────────── */}
       <section id="stay" className="py-24 md:py-36 px-6 border-b border-[#EDE6D8]">
         <div className="max-w-5xl mx-auto">
@@ -1100,7 +1624,7 @@ const App = () => {
       </section>
 
       {/* ──────────────────────────────────────────
-          Section 9: Instagram Feed Grid & Accounts (3번 요청 반영)
+          Section 12: Instagram Feed Grid & Accounts (3번 요청 반영)
       ────────────────────────────────────────── */}
       <section id="instagram" className="py-24 md:py-36 px-6 bg-white border-b border-[#EDE6D8]">
         <div className="max-w-6xl mx-auto">
@@ -1264,7 +1788,7 @@ const App = () => {
             <div>
               <p className="font-bold text-[#273223] mb-2 font-serif text-sm">치유와 집중수련</p>
               <p>도시 회원 주말 리트릿 · 집중수련</p>
-              <p>자연농 텃밭 가꾸기 · 숲밭 걷기 명상 · 차담</p>
+              <p>개인·가족 힐링 프로그램 · 기업 그린 리커버리</p>
             </div>
             <div>
               <p className="font-bold text-[#273223] mb-2 font-serif text-sm">철학과 마음</p>
