@@ -61,6 +61,9 @@ import buildCarpentryWork from './assets/images/curated/build_carpentry_work.jpg
 import buildBrickMasonry from './assets/images/curated/build_brick_masonry.jpg';
 import buildWorkshopSiding from './assets/images/curated/build_workshop_siding.jpg';
 import buildFireplaceSanctuary from './assets/images/curated/build_fireplace_sanctuary.jpg';
+import buildShelterExterior from './assets/images/curated/build_shelter_exterior.jpg';
+import retreatGardenHouse from './assets/images/curated/retreat_garden_house.jpg';
+import woodFurnitureHome from './assets/images/curated/wood_furniture_home.jpg';
 import woodProjectSignboard from './assets/images/curated/wood_project_signboard.jpg';
 import woodProjectOsil from './assets/images/curated/wood_project_osil.jpg';
 
@@ -268,9 +271,9 @@ const App = () => {
       id: 6,
       cat: 'build',
       catName: '집 짓던 날',
-      title: '통창 숲 뷰와 타오르는 벽난로의 첫 불',
-      desc: '완성된 쉼터 거실, 통창 너머 초록 숲을 바라보며 장작 난로에 첫 불을 지피던 순간.',
-      img: buildFireplaceSanctuary,
+      title: '완성된 목공소와 징검다리 디딤석 길',
+      desc: '맑은 하늘 아래 단단하게 세워진 작업실과 마당을 잇는 천연 판석 디딤길이 완성되었습니다.',
+      img: buildShelterExterior,
       date: '2024.08'
     },
     {
@@ -478,7 +481,7 @@ const App = () => {
           {/* Desktop Single-Line Navigation (Strictly No-Wrap) */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-5 text-[13px] xl:text-[13.5px] font-semibold text-[#253020] whitespace-nowrap">
             <a href="#retreat" className="hover:text-[#4F6446] transition-colors text-[#384931] font-bold">
-              현존캠퍼스
+              농원소개
             </a>
             <a href="#programs" className="hover:text-[#4F6446] transition-colors">
               프로그램
@@ -529,7 +532,7 @@ const App = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="block text-base text-[#3A4B33] font-bold py-1"
             >
-              현존명상센터 부여캠퍼스
+              농원소개 (현존명상센터 부여캠퍼스)
             </a>
             <a
               href="#programs"
@@ -730,16 +733,16 @@ const App = () => {
 
             <div className="relative rounded-2xl overflow-hidden shadow-xs aspect-[4/3] bg-[#EAE4D7] group">
               <img
-                src={buildFireplaceSanctuary}
-                alt="통창 숲 뷰와 타오르는 주물 벽난로가 있는 고요한 명상 쉼터"
+                src={retreatGardenHouse}
+                alt="자연 숲밭 너머 고요히 자리 잡은 붉은 벽돌 명상 쉼터와 살림집"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/75 via-black/30 to-transparent text-white">
                 <span className="text-[10px] uppercase tracking-widest text-[#E3DDD1] font-mono block mb-1">
-                  Fireplace & Forest Sanctuary
+                  Forest Garden & Brick Sanctuary
                 </span>
                 <p className="font-serif text-base md:text-lg">
-                  통창 너머 숲과 따뜻한 벽난로 앞 명상실
+                  초록 숲밭과 자연을 품은 명상 쉼터 전경
                 </p>
               </div>
             </div>
@@ -1765,8 +1768,8 @@ const App = () => {
               <div className="rounded-2xl overflow-hidden bg-white border border-[#E9E2D4] shadow-xs flex flex-col group">
                 <div className="aspect-[4/3] overflow-hidden bg-[#FAF6EE] relative">
                   <img
-                    src={buildFireplaceSanctuary}
-                    alt="봄농원 쉼터 원목 인테리어와 주물 벽난로"
+                    src={woodFurnitureHome}
+                    alt="스튜디오 심플우드 목공소에서 클램프로 정밀 조립 중인 맞춤 원목 수납가구"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 text-white text-[10px] font-mono">
