@@ -460,40 +460,44 @@ const App = () => {
   return (
     <div className="min-h-screen bg-[#FCFBF7] text-[#2C3228] selection:bg-[#E8DFD1] selection:text-[#2C3228] font-sans antialiased">
       {/* ──────────────────────────────────────────
-          Navigation Header
+          Navigation Header (Clean Single-Line & High-Contrast)
       ────────────────────────────────────────── */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? 'bg-[#FCFBF7]/90 backdrop-blur-md border-b border-[#EAE3D2]/70 py-4 shadow-sm'
-            : 'bg-transparent py-6'
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 bg-[#FCFBF7]/95 backdrop-blur-md border-b border-[#E8E0D2] py-3.5 shadow-xs transition-all duration-300"
       >
-        <div className="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between">
-          <a href="#" className="group flex items-baseline gap-2 text-decoration-none">
-            <span className="font-serif text-2xl md:text-2xl font-bold tracking-tight text-[#242A20] group-hover:text-[#52634B] transition-colors">
+        <div className="max-w-6xl mx-auto px-5 md:px-8 flex items-center justify-between gap-4">
+          {/* Brand Logo */}
+          <a href="#" className="flex items-center gap-2.5 shrink-0 text-decoration-none">
+            <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1F261B] hover:text-[#4A5D43] transition-colors whitespace-nowrap">
               봄 : 있는 그대로
-            </span>
-            <span className="text-[11px] font-sans tracking-wider text-[#7A8372] hidden sm:inline border-l border-[#DCD3C0] pl-2 ml-1">
-              현존명상센터 부여캠퍼스
             </span>
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center space-x-7 text-[13.5px] font-medium text-[#4A5445]">
-            <a href="#retreat" className="hover:text-[#1F251B] transition-colors text-[#43573C] font-bold">현존캠퍼스</a>
-            <a href="#couple" className="hover:text-[#1F251B] transition-colors">부부 이야기</a>
-            <a href="#programs" className="hover:text-[#1F251B] transition-colors">치유 프로그램</a>
-            <a href="#archive" className="hover:text-[#1F251B] transition-colors">농원 아카이브</a>
-            <a href="#milestones" className="hover:text-[#1F251B] transition-colors">주요 연혁</a>
-            <a href="#daily" className="hover:text-[#1F251B] transition-colors">농원의 하루</a>
-            <a href="#farming" className="hover:text-[#1F251B] transition-colors">자연농 숲밭</a>
-            <a href="#stay" className="hover:text-[#1F251B] transition-colors">머무름·우핑</a>
-            <a href="#instagram" className="hover:text-[#1F251B] transition-colors flex items-center gap-1 text-[#556B4E]">
+          {/* Desktop Single-Line Navigation (Strictly No-Wrap) */}
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-7 text-[13.5px] xl:text-[14px] font-semibold text-[#253020] whitespace-nowrap">
+            <a href="#retreat" className="hover:text-[#4F6446] transition-colors text-[#384931] font-bold">
+              현존캠퍼스
+            </a>
+            <a href="#programs" className="hover:text-[#4F6446] transition-colors">
+              치유 프로그램
+            </a>
+            <a href="#archive" className="hover:text-[#4F6446] transition-colors">
+              농원 아카이브
+            </a>
+            <a href="#milestones" className="hover:text-[#4F6446] transition-colors">
+              주요 연혁
+            </a>
+            <a href="#couple" className="hover:text-[#4F6446] transition-colors">
+              부부 이야기
+            </a>
+            <a href="#instagram" className="hover:text-[#4F6446] transition-colors flex items-center gap-1 text-[#475C3E]">
               <Instagram size={14} />
               <span>인스타</span>
             </a>
-            <a href="#contact" className="hover:text-[#1F251B] transition-colors font-bold text-[#44563C]">
+            <a
+              href="#contact"
+              className="px-3.5 py-1.5 rounded-full bg-[#41533B] hover:bg-[#32402D] text-white text-xs font-medium transition-all shadow-xs"
+            >
               오시는 길
             </a>
           </div>
@@ -501,79 +505,87 @@ const App = () => {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-2 text-[#2C3228] hover:text-[#52634B] focus:outline-none"
+            className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#F0EAE0] hover:bg-[#E6DEC4] text-[#242D20] text-xs font-semibold focus:outline-none transition-colors"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            <span>{mobileMenuOpen ? '닫기' : '메뉴'}</span>
           </button>
         </div>
 
         {/* Mobile Dropdown Drawer */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-[#FAF7F0] border-b border-[#EAE3D2] px-6 py-6 space-y-3.5 animate-in fade-in duration-300">
+          <div className="lg:hidden bg-[#FAF7F0] border-b border-[#EAE3D2] px-6 py-6 space-y-3.5 animate-in fade-in duration-300 shadow-sm">
             <a
               href="#retreat"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-[#43573C] font-bold py-1"
+              className="block text-base text-[#3A4B33] font-bold py-1"
             >
               현존명상센터 부여캠퍼스
             </a>
             <a
-              href="#couple"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-[#404A3A] font-medium py-1"
-            >
-              호스트 부부 이야기
-            </a>
-            <a
               href="#programs"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-[#404A3A] font-medium py-1"
+              className="block text-base text-[#333E2E] font-medium py-1"
             >
-              치유 & 명상 프로그램 (명상 / 개인·가족 / 기업)
+              치유 프로그램 (명상 / 개인·가족 / 기업)
             </a>
             <a
               href="#archive"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-[#404A3A] font-medium py-1"
+              className="block text-base text-[#333E2E] font-medium py-1"
             >
-              농원 아카이브 (기록과 순간들)
+              농원 아카이브 (사진과 기록)
             </a>
             <a
               href="#milestones"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-[#404A3A] font-medium py-1"
+              className="block text-base text-[#333E2E] font-medium py-1"
             >
-              농원의 주요 연혁
+              농원의 주요 연혁 & 건축 기록
+            </a>
+            <a
+              href="#couple"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base text-[#333E2E] font-medium py-1"
+            >
+              호스트 부부 이야기 (봄 & 심플우드)
             </a>
             <a
               href="#daily"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-[#404A3A] font-medium py-1"
+              className="block text-base text-[#333E2E] font-medium py-1"
             >
-              농원의 하루 (일상 비주얼)
+              농원의 하루 일과
             </a>
             <a
               href="#farming"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-[#404A3A] font-medium py-1"
+              className="block text-base text-[#333E2E] font-medium py-1"
             >
               자연농 숲밭 & 퍼머컬처
             </a>
             <a
               href="#stay"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-[#404A3A] font-medium py-1"
+              className="block text-base text-[#333E2E] font-medium py-1"
             >
-              머무름과 우핑
+              머무름과 WWOOF 우핑
             </a>
             <a
               href="#instagram"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-[#556B4E] font-medium py-1 flex items-center gap-2"
+              className="block text-base text-[#465A3E] font-medium py-1 flex items-center gap-2"
             >
               <Instagram size={16} />
               <span>인스타그램 갤러리</span>
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base text-[#2E3C29] font-bold py-2 px-4 rounded-xl bg-[#EBE3D5] mt-2"
+            >
+              📍 오시는 길 & 방문 안내
             </a>
           </div>
         )}
@@ -595,9 +607,9 @@ const App = () => {
 
         {/* Content Box */}
         <div className="relative z-10 max-w-4xl mx-auto text-center mt-12 md:mt-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FCFBF7]/90 backdrop-blur-sm border border-[#E7DFD0] text-[13px] text-[#4F5B49] mb-8 font-medium shadow-xs">
-            <Sparkles size={13} className="text-[#657C5C]" />
-            <span>현존명상센터 부여캠퍼스 · 충남 부여 임천면 1,800평 언덕 숲밭</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FCFBF7]/95 backdrop-blur-md border border-[#E4DBCB] text-[13px] text-[#3D4C37] mb-8 font-medium shadow-xs">
+            <Sparkles size={13} className="text-[#5F7855]" />
+            <span>유네스코 문화도시, 부여의 숲밭과 로컬 목공소</span>
           </div>
 
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#1E2519] leading-[1.3] md:leading-[1.25] tracking-tight mb-6">
