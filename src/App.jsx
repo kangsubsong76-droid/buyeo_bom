@@ -61,6 +61,8 @@ import buildCarpentryWork from './assets/images/curated/build_carpentry_work.jpg
 import buildBrickMasonry from './assets/images/curated/build_brick_masonry.jpg';
 import buildWorkshopSiding from './assets/images/curated/build_workshop_siding.jpg';
 import buildFireplaceSanctuary from './assets/images/curated/build_fireplace_sanctuary.jpg';
+import woodProjectSignboard from './assets/images/curated/wood_project_signboard.jpg';
+import woodProjectOsil from './assets/images/curated/wood_project_osil.jpg';
 
 // Instagram 9 square feed images
 import insta01 from './assets/images/curated/insta_01.jpg';
@@ -474,18 +476,24 @@ const App = () => {
           </a>
 
           {/* Desktop Single-Line Navigation (Strictly No-Wrap) */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-7 text-[13.5px] xl:text-[14px] font-semibold text-[#253020] whitespace-nowrap">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-5 text-[13px] xl:text-[13.5px] font-semibold text-[#253020] whitespace-nowrap">
             <a href="#retreat" className="hover:text-[#4F6446] transition-colors text-[#384931] font-bold">
               현존캠퍼스
             </a>
             <a href="#programs" className="hover:text-[#4F6446] transition-colors">
-              치유 프로그램
+              프로그램
+            </a>
+            <a href="#woodcraft" className="hover:text-[#4F6446] transition-colors">
+              목공
+            </a>
+            <a href="#stay" className="hover:text-[#4F6446] transition-colors">
+              우핑
             </a>
             <a href="#archive" className="hover:text-[#4F6446] transition-colors">
-              농원 아카이브
+              아카이브
             </a>
             <a href="#milestones" className="hover:text-[#4F6446] transition-colors">
-              주요 연혁
+              연혁
             </a>
             <a href="#couple" className="hover:text-[#4F6446] transition-colors">
               부부 이야기
@@ -528,7 +536,21 @@ const App = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="block text-base text-[#333E2E] font-medium py-1"
             >
-              치유 프로그램 (명상 / 개인·가족 / 기업)
+              치유 & 명상 프로그램
+            </a>
+            <a
+              href="#woodcraft"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base text-[#333E2E] font-medium py-1"
+            >
+              스튜디오 심플우드 목공
+            </a>
+            <a
+              href="#stay"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base text-[#333E2E] font-medium py-1"
+            >
+              머무름과 WWOOF 우핑
             </a>
             <a
               href="#archive"
@@ -607,9 +629,28 @@ const App = () => {
 
         {/* Content Box */}
         <div className="relative z-10 max-w-4xl mx-auto text-center mt-12 md:mt-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FCFBF7]/95 backdrop-blur-md border border-[#E4DBCB] text-[13px] text-[#3D4C37] mb-8 font-medium shadow-xs">
-            <Sparkles size={13} className="text-[#5F7855]" />
-            <span>유네스코 문화도시, 부여의 숲밭과 로컬 목공소</span>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-8">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FCFBF7]/95 backdrop-blur-md border border-[#E4DBCB] text-[12.5px] text-[#3D4C37] font-medium shadow-xs">
+              <Sparkles size={13} className="text-[#5F7855]" />
+              <span>유네스코 문화도시, 부여의 숲밭과 로컬 목공소</span>
+            </div>
+            <a
+              href="#retreat"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FAF5EC]/90 backdrop-blur-md border border-[#E3D8C3] text-[12px] text-[#4A5D43] font-medium hover:border-[#4A5D43] transition-colors"
+            >
+              <Compass size={13} className="text-[#4A5D43]" />
+              <span>현존명상센터 부여캠퍼스</span>
+            </a>
+            <a
+              href="https://wwoof.kr/ko/host/61076"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F0F6EE]/90 backdrop-blur-md border border-[#CDE1CA] text-[12px] text-[#34592B] font-medium hover:border-[#34592B] transition-colors group"
+            >
+              <Sprout size={13} className="text-[#34592B]" />
+              <span>WWOOF 인증농장 #61076</span>
+              <ArrowUpRight size={11} className="text-[#34592B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
           </div>
 
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#1E2519] leading-[1.3] md:leading-[1.25] tracking-tight mb-6">
@@ -1571,68 +1612,182 @@ const App = () => {
       </section>
 
       {/* ──────────────────────────────────────────
-          Section 9: Studio Simplewood & Sustainable Living (목공 & 생태적 살림)
+          Section 9: Studio Simplewood & Sustainable Living (스튜디오 심플우드 & 목공 프로젝트)
       ────────────────────────────────────────── */}
       <section id="woodcraft" className="py-24 md:py-36 px-6 border-b border-[#EDE6D8]">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <span className="text-[12px] uppercase tracking-[0.25em] text-[#7B8770] font-semibold block mb-3">
-              Craft & Sustainability
+              Studio Simplewood & Craft
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-[#222A1E] tracking-tight">
-              스튜디오 나무다움 & 생태적 살림
+              스튜디오 심플우드 & 로컬 목공
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
               가구를 만들던 목수가 지역 목수님과 함께 농원의 집과 작업실을 직접 지었습니다.<br />
-              자연을 불필요하게 해치지 않는 단순하고 정직한 삶의 방식을 실천합니다.
+              원목 고유의 나뭇결과 향을 살려, 자연을 해치지 않는 정직하고 소박한 가구와 공간 현판을 만듭니다.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+          {/* Workshop Showcase */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-20">
             <div className="lg:col-span-7">
-              <div className="rounded-2xl overflow-hidden aspect-[16/10] bg-[#EAE3D4] shadow-sm">
+              <div className="rounded-2xl overflow-hidden aspect-[16/10] bg-[#EAE3D4] shadow-xs">
                 <img
                   src={woodWorkshop}
-                  alt="스튜디오 나무다움 목공소"
+                  alt="스튜디오 심플우드 목공소 작업실"
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
 
             <div className="lg:col-span-5 space-y-6">
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-[#E9E2D4]">
+              <div className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-[#E9E2D4] shadow-xs">
                 <img
                   src={woodCraftsmanHands}
-                  alt="대패질하는 목수의 손"
+                  alt="대패질하는 목수의 손길"
                   className="w-20 h-20 rounded-xl object-cover shrink-0"
                 />
                 <div>
                   <h4 className="font-serif text-base font-bold text-[#232B1E]">천연 원목 손작업</h4>
                   <p className="text-xs text-[#63705C] mt-1 font-light leading-relaxed">
-                    나무의 결과 향을 존중하며 생활 가구와 도구를 손수 짓고 오래 고쳐 씁니다.
+                    화학 도료 대신 천연 오일로 마감하여 맨살에 닿는 나무 본연의 따스한 온기를 전합니다.
                   </p>
                 </div>
               </div>
 
               {/* Eco-living Points */}
-              <div className="space-y-3.5 text-sm text-[#4E5B49] font-light">
+              <div className="space-y-3.5 text-xs md:text-sm text-[#4E5B49] font-light">
                 <div className="flex items-start gap-3">
                   <Check size={16} className="text-[#556B4E] mt-0.5 shrink-0" />
-                  <span><strong>6kW 태양광 발전</strong>으로 생활 전기를 스스로 자급합니다.</span>
+                  <span><strong>6kW 태양광 발전</strong>으로 생활과 공방 전기를 청정에너지로 자급합니다.</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check size={16} className="text-[#556B4E] mt-0.5 shrink-0" />
-                  <span><strong>지하수와 빗물 집수 시설</strong>로 텃밭 식물들에게 물을 공급합니다.</span>
+                  <span><strong>원목 가구 주문제작</strong> 및 오래된 나무 살림을 정성으로 고쳐 씁니다.</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check size={16} className="text-[#556B4E] mt-0.5 shrink-0" />
-                  <span>농원의 <strong>자연 석빙고</strong>를 활용해 냉장고 의존을 줄이고 작물을 신선하게 저장합니다.</span>
+                  <span>로컬 체험농원 및 감성 공간을 위한 <strong>맞춤 원목 현판</strong>을 만듭니다.</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <Check size={16} className="text-[#556B4E] mt-0.5 shrink-0" />
-                  <span>제철 텃밭 채소와 로컬푸드로 밥상을 차려 비닐 포장과 운송 거리를 줄입니다.</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Recent Woodcraft Projects & Portfolio */}
+          <div className="mt-8 pt-16 border-t border-[#EAE2D4]">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+              <div>
+                <span className="text-[11px] font-mono uppercase tracking-widest text-[#7B8770] block mb-2">
+                  Recent Projects & Portfolio
+                </span>
+                <h3 className="font-serif text-2xl md:text-3xl text-[#222A1E]">
+                  최근 목공 프로젝트 & 제작 히스토리
+                </h3>
+              </div>
+              <a
+                href="https://www.instagram.com/simplwood"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-[#52644B] font-bold hover:underline"
+              >
+                <Instagram size={14} />
+                <span>@simplwood 인스타에서 더 보기</span>
+                <ArrowUpRight size={13} />
+              </a>
+            </div>
+
+            {/* 3 Project Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Project 1: 부여군 농업기술센터 야외 원목 현판 */}
+              <div className="rounded-2xl overflow-hidden bg-white border border-[#E9E2D4] shadow-xs flex flex-col group">
+                <div className="aspect-[4/3] overflow-hidden bg-[#FAF6EE] relative">
+                  <img
+                    src={woodProjectSignboard}
+                    alt="부여군 농업기술센터 체험농원 야외 원목 현판"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 text-white text-[10px] font-mono">
+                    2026.09 프로젝트
+                  </div>
+                </div>
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-3">
+                  <div>
+                    <span className="text-[11px] font-semibold text-[#66785E] block mb-1">
+                      공공 & 로컬 협업
+                    </span>
+                    <h4 className="font-serif text-base font-bold text-[#232B1E]">
+                      부여군 농업기술센터 체험농원 현판
+                    </h4>
+                    <p className="text-xs text-[#63705C] font-light leading-relaxed mt-2">
+                      부여군 소재 농촌체험농원 7개소를 위한 야외 T자형 원목 입간판 제작. 북미산 레드오크(Red Oak) 하드우드 원목과 정밀 CNC 양각 각인, 전통 장부맞춤 방부목 프레임 및 옥외 오일스테인 마감.
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-[#F2ECE1] text-[11px] text-[#7A8772] font-mono">
+                    소재: 북미산 레드오크 · 방부목 구조체
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 2: 오실스테이 맞춤 원목 현판 & 수납 가구 */}
+              <div className="rounded-2xl overflow-hidden bg-white border border-[#E9E2D4] shadow-xs flex flex-col group">
+                <div className="aspect-[4/3] overflow-hidden bg-[#FAF6EE] relative">
+                  <img
+                    src={woodProjectOsil}
+                    alt="오실스테이 맞춤 원목 가구 3D 스케치업 설계"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 text-white text-[10px] font-mono">
+                    2025~2026 프로젝트
+                  </div>
+                </div>
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-3">
+                  <div>
+                    <span className="text-[11px] font-semibold text-[#66785E] block mb-1">
+                      공간 브랜딩 & 스테이 가구
+                    </span>
+                    <h4 className="font-serif text-base font-bold text-[#232B1E]">
+                      오실스테이 맞춤 가구 & 현판
+                    </h4>
+                    <p className="text-xs text-[#63705C] font-light leading-relaxed mt-2">
+                      부여 감성 머무름 공간 '오실스테이(Osil Farm Stay)'를 위한 공간 맞춤 원목 현판 및 스케치업 3D 정밀 설계 기반 주방 카운터, 수납장(Cabinetry), 아일랜드 작업대 수제 제작.
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-[#F2ECE1] text-[11px] text-[#7A8772] font-mono">
+                    공간: 오실스테이 · 3D 맞춤 제작
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 3: 봄농원 살림집 & 명상 쉼터 자체 가구 */}
+              <div className="rounded-2xl overflow-hidden bg-white border border-[#E9E2D4] shadow-xs flex flex-col group">
+                <div className="aspect-[4/3] overflow-hidden bg-[#FAF6EE] relative">
+                  <img
+                    src={buildFireplaceSanctuary}
+                    alt="봄농원 쉼터 원목 인테리어와 주물 벽난로"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 text-white text-[10px] font-mono">
+                    2024~2025 프로젝트
+                  </div>
+                </div>
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-3">
+                  <div>
+                    <span className="text-[11px] font-semibold text-[#66785E] block mb-1">
+                      농원 살림 & 명상실
+                    </span>
+                    <h4 className="font-serif text-base font-bold text-[#232B1E]">
+                      봄농원 살림집 & 쉼터 가구 제작
+                    </h4>
+                    <p className="text-xs text-[#63705C] font-light leading-relaxed mt-2">
+                      통창 너머 숲을 마주하는 6인용 원목 다이닝 테이블, 주방 원목 싱크대 및 하부장, 벽난로 곁 원목 좌식 티테이블, 목공소 헤비 듀티 워크벤치(작업대)를 목수 남편이 손수 제작.
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-[#F2ECE1] text-[11px] text-[#7A8772] font-mono">
+                    제작: 다이닝 테이블 · 주방 싱크 · 티테이블
+                  </div>
                 </div>
               </div>
             </div>
