@@ -28,7 +28,11 @@ import {
   Briefcase,
   History,
   FolderOpen,
-  CheckCircle2
+  CheckCircle2,
+  Copy,
+  Phone,
+  Car,
+  Bus
 } from 'lucide-react';
 
 // Curated authentic images
@@ -75,6 +79,7 @@ const App = () => {
   const [activeSeason, setActiveSeason] = useState('spring');
   const [activeProgramTab, setActiveProgramTab] = useState('meditation');
   const [activeArchiveCategory, setActiveArchiveCategory] = useState('all');
+  const [copiedAddress, setCopiedAddress] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -487,6 +492,9 @@ const App = () => {
             <a href="#instagram" className="hover:text-[#1F251B] transition-colors flex items-center gap-1 text-[#556B4E]">
               <Instagram size={14} />
               <span>인스타</span>
+            </a>
+            <a href="#contact" className="hover:text-[#1F251B] transition-colors font-bold text-[#44563C]">
+              오시는 길
             </a>
           </div>
 
@@ -1725,6 +1733,41 @@ const App = () => {
             </p>
           </div>
 
+{/* WWOOF Korea Certified Host Banner */}
+          <div className="mb-14 p-6 md:p-8 rounded-3xl bg-[#F3F8F0] border border-[#D3E5CE] shadow-xs">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-2xl bg-[#3E6533] text-white flex flex-col items-center justify-center shadow-xs shrink-0">
+                  <span className="font-serif font-black text-sm tracking-tight leading-none">WWOOF</span>
+                  <span className="text-[9px] font-sans tracking-widest text-[#C8E8BF] mt-0.5">KOREA</span>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#DEECD9] text-[#34592B] text-[11px] font-bold">
+                      공식 인증 호스트 #61076
+                    </span>
+                    <span className="text-xs text-[#5D7C54]">유기순환 생태농원</span>
+                  </div>
+                  <h3 className="font-serif text-lg md:text-xl font-bold text-[#23351E]">
+                    WWOOF Korea 공식 인증 호스트 농장
+                  </h3>
+                  <p className="text-xs text-[#526D4A] font-light mt-0.5 leading-relaxed">
+                    유기농과 자연순환의 가치를 배우고, 대지와의 교감을 실천하는 세계적인 우핑 네트워크의 공식 호스트입니다.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://wwoof.kr/ko/host/61076"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#3E6533] hover:bg-[#325229] text-white text-xs font-medium transition-all shadow-xs shrink-0 group"
+              >
+                <span>우핑 호스트 프로필 보기</span>
+                <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            </div>
+          </div>
+
           {/* Stay Highlights 3 Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             <div className="p-6 rounded-2xl bg-white border border-[#E9E2D4]">
@@ -1909,7 +1952,7 @@ const App = () => {
                     <Instagram size={22} />
                   </div>
                   <div>
-                    <h3 className="font-serif text-base font-bold text-[#232B1E]">스튜디오 나무다움</h3>
+                    <h3 className="font-serif text-base font-bold text-[#232B1E]">스튜디오 심플우드</h3>
                     <p className="text-xs text-[#8A7667] font-mono">@simplwood</p>
                   </div>
                 </div>
@@ -1927,6 +1970,220 @@ const App = () => {
                 <Instagram size={14} />
                 <span>@simplwood 인스타그램 방문하기</span>
                 <ArrowUpRight size={13} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────────────────────────────
+          Section 13: Contact & Location (오시는 길 & 방문 안내)
+      ────────────────────────────────────────── */}
+      <section id="contact" className="py-24 md:py-36 px-6 bg-[#FCFBF7] border-b border-[#EDE6D8]">
+        <div className="max-w-5xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <span className="text-[12px] uppercase tracking-[0.25em] text-[#7B8770] font-semibold block mb-3">
+              Contact & Location
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-[#222A1E] tracking-tight">
+              오시는 길 & 방문 안내
+            </h2>
+            <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
+            <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
+              봄농원은 고요한 명상과 자연순환의 삶이 숨 쉬는 곳입니다.<br />
+              방문객 모두의 깊은 쉼과 몰입을 위해 사전 문의 및 예약 후 방문해 주시기를 부탁드립니다.
+            </p>
+          </div>
+
+          {/* Address Main Card */}
+          <div className="p-8 md:p-10 rounded-3xl bg-white border border-[#E9E1D2] shadow-xs mb-10">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-[#EFEAE0]">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7962]">
+                  <MapPin size={16} className="text-[#52634B]" />
+                  <span>농원 상세 주소</span>
+                </div>
+                <h3 className="font-serif text-2xl md:text-3xl font-bold text-[#232B1E]">
+                  충남 부여군 남성로 1107-12
+                </h3>
+                <p className="text-xs text-[#7A8673] font-light">
+                  (충청남도 부여군 임천면 남성로 1107-12 · 우편번호 33171)
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2.5">
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText('충남 부여군 남성로 1107-12');
+                    setCopiedAddress(true);
+                    setTimeout(() => setCopiedAddress(false), 2500);
+                  }}
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#F4EFE6] hover:bg-[#EAE2D4] text-xs text-[#43523B] font-medium transition-all"
+                >
+                  {copiedAddress ? <Check size={14} className="text-[#4E6E40]" /> : <Copy size={14} />}
+                  <span>{copiedAddress ? '주소 복사 완료!' : '주소 복사'}</span>
+                </button>
+
+                <a
+                  href="https://map.naver.com/v5/search/%EC%B6%A9%EB%82%A8%20%EB%B6%80%EC%97%AC%EA%B5%B0%20%EB%82%A8%EC%84%B1%EB%A1%9C%201107-12"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#03C75A] hover:bg-[#02b350] text-white text-xs font-medium transition-all"
+                >
+                  <span>네이버 지도</span>
+                  <ArrowUpRight size={13} />
+                </a>
+
+                <a
+                  href="https://map.kakao.com/link/search/%EC%B6%A9%EB%82%A8%20%EB%B6%80%EC%97%AC%EA%B5%B0%20%EB%82%A8%EC%84%B1%EB%A1%9C%201107-12"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#FEE500] hover:bg-[#ebd300] text-[#191919] text-xs font-medium transition-all"
+                >
+                  <span>카카오맵</span>
+                  <ArrowUpRight size={13} />
+                </a>
+              </div>
+            </div>
+
+            {/* Transportation Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 text-sm font-bold text-[#232B1E]">
+                  <Car size={18} className="text-[#52634B]" />
+                  <span>자가용 이용 시</span>
+                </div>
+                <div className="text-xs text-[#5A6853] font-light leading-relaxed space-y-1.5">
+                  <p>• 네비게이션에 <strong>'충남 부여군 남성로 1107-12'</strong> 검색</p>
+                  <p>• 서천공주고속도로 서부여IC 또는 논산천안고속도로에서 임천 방면으로 진입</p>
+                  <p>• 농원 언덕 진입로를 따라 올라오시면 완만한 전용 주차 공간이 마련되어 있습니다.</p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 text-sm font-bold text-[#232B1E]">
+                  <Bus size={18} className="text-[#52634B]" />
+                  <span>대중교통 이용 시</span>
+                </div>
+                <div className="text-xs text-[#5A6853] font-light leading-relaxed space-y-1.5">
+                  <p>• <strong>부여시외버스터미널</strong> 하차 후 임천 방면 시내버스 탑승 (약 20~25분)</p>
+                  <p>• 터미널에서 택시 이용 시 약 15분 소요</p>
+                  <p>• KTX 이용 시 공주역 또는 논산역에서 부여 방면 버스/차량 환승</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Cards 3 Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {/* 1. 봄 인스타그램 */}
+            <div className="p-6 rounded-2xl bg-white border border-[#E9E1D2] space-y-3">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#F3EDE2] text-[#485B3F] flex items-center justify-center">
+                  <Instagram size={18} />
+                </div>
+                <div>
+                  <h4 className="font-serif text-sm font-bold text-[#232B1E]">봄 : 농원 & 치유 문의</h4>
+                  <p className="text-[11px] text-[#707D68] font-mono">@bom_let.be</p>
+                </div>
+              </div>
+              <p className="text-xs text-[#5A6853] font-light leading-relaxed">
+                자연치유 프로그램, 숲밭 명상 및 방문 일정 문의는 인스타그램 DM으로 다정하게 소통합니다.
+              </p>
+              <a
+                href="https://www.instagram.com/bom_let.be"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-[#485B3F] font-bold hover:underline pt-1"
+              >
+                <span>인스타 DM 보내기</span>
+                <ArrowUpRight size={13} />
+              </a>
+            </div>
+
+            {/* 2. 심플우드 인스타그램 */}
+            <div className="p-6 rounded-2xl bg-white border border-[#E9E1D2] space-y-3">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#F5ECE5] text-[#7F5E45] flex items-center justify-center">
+                  <Instagram size={18} />
+                </div>
+                <div>
+                  <h4 className="font-serif text-sm font-bold text-[#232B1E]">심플우드 : 목공 문의</h4>
+                  <p className="text-[11px] text-[#8A7667] font-mono">@simplwood</p>
+                </div>
+              </div>
+              <p className="text-xs text-[#5A6853] font-light leading-relaxed">
+                원목 가구 및 소품 제작, 목공방 방문 및 나무 작업에 관한 문의를 환영합니다.
+              </p>
+              <a
+                href="https://www.instagram.com/simplwood"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-[#7F5E45] font-bold hover:underline pt-1"
+              >
+                <span>인스타 DM 보내기</span>
+                <ArrowUpRight size={13} />
+              </a>
+            </div>
+
+            {/* 3. 현존명상센터 서울 본원 */}
+            <div className="p-6 rounded-2xl bg-white border border-[#E9E1D2] space-y-3">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#EAE8E3] text-[#414E3B] flex items-center justify-center">
+                  <Phone size={18} />
+                </div>
+                <div>
+                  <h4 className="font-serif text-sm font-bold text-[#232B1E]">현존명상센터 서울 본원</h4>
+                  <p className="text-[11px] text-[#73806C] font-mono">010-3188-3105</p>
+                </div>
+              </div>
+              <p className="text-xs text-[#5A6853] font-light leading-relaxed">
+                도심 회원 리트릿 예약 및 1:1 대면 심층상담, 정규 명상 과정 관련 문의.
+              </p>
+              <a
+                href="https://truebeing-meditation.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-[#414E3B] font-bold hover:underline pt-1"
+              >
+                <span>명상센터 웹사이트 방문</span>
+                <ArrowUpRight size={13} />
+              </a>
+            </div>
+          </div>
+
+          {/* WWOOF Korea Certified Host Banner */}
+          <div className="p-8 rounded-3xl bg-[#F4F8F1] border border-[#D5E6D0] shadow-xs">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-2xl bg-[#3D6933] text-white flex flex-col items-center justify-center shadow-xs shrink-0">
+                  <span className="font-serif font-black text-sm tracking-tight leading-none">WWOOF</span>
+                  <span className="text-[9px] font-sans tracking-widest text-[#C8E8BF] mt-0.5">KOREA</span>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#E1EEDC] text-[#34592B] text-[11px] font-bold">
+                      공식 인증 호스트 #61076
+                    </span>
+                    <span className="text-xs text-[#5D7C54]">유기순환 생태농원</span>
+                  </div>
+                  <h3 className="font-serif text-lg md:text-xl font-bold text-[#23351E]">
+                    WWOOF Korea 공식 인증 호스트 농장
+                  </h3>
+                  <p className="text-xs text-[#526D4A] font-light mt-0.5 leading-relaxed">
+                    자연순환 농업과 생태적 삶을 실천하는 세계적인 우핑 네트워크의 공식 호스트입니다.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://wwoof.kr/ko/host/61076"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#3E6533] hover:bg-[#325229] text-white text-xs font-medium transition-all shadow-xs shrink-0 group"
+              >
+                <span>우핑 호스트 프로필 보기</span>
+                <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </div>
           </div>
@@ -1974,7 +2231,7 @@ const App = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-xs text-[#6B7864] font-light leading-relaxed">
             <div>
               <p className="font-bold text-[#273223] mb-2 font-serif text-sm">농원 위치 & 캠퍼스</p>
-              <p>충청남도 부여군 임천면 평온한 언덕 (약 1,800평)</p>
+              <p>충남 부여군 임천면 남성로 1107-12 (약 1,800평)</p>
               <p className="text-[11px] text-[#869580] mt-1">현존명상센터 부여캠퍼스 · 대중교통 및 주차 안내는 방문 시 상세 안내</p>
             </div>
             <div>
