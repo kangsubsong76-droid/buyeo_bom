@@ -195,11 +195,11 @@ const App = () => {
       year: '2025',
       period: '사계절',
       title: '현존명상센터 부여캠퍼스 개원 & 숲밭 안정',
-      subtitle: '도심 회원들의 사마타 집중 수련처이자 생태 정원',
+      subtitle: '도심을 벗어나 온전한 쉼과 마음챙김이 머무는 생태 정원',
       image: mandalaMindfulness,
       imageCaption: '나선형 만다라 허브 명상 정원과 고요한 명상의 아침',
       items: [
-        '성북동 현존명상센터의 공식 외원 ‘부여캠퍼스’로 정식 지정 (도시 회원 집중수련처)',
+        '성북동 현존명상센터의 공식 연계 공간 ‘부여캠퍼스’로 지정 (자연 속 쉼과 일상 명상)',
         '중심으로 에너지가 모이는 나선형 만다라 허브 명상 정원(Spiral Garden) 조성',
         'WWOOF Korea 공식 호스트 등록, 국내외 청년·생태 활동가들과 우핑 교류',
         '토종 씨앗 채종 및 자급자족 유기순환 숲밭 생태계 안착'
@@ -213,7 +213,7 @@ const App = () => {
       image: hostsCouple,
       imageCaption: '있는 그대로의 삶을 나누는 봄농원의 두 호스트',
       items: [
-        '도심 회원을 위한 주말 집중 정진 및 1:1 맞춤형 힐링 세션 상시 운영',
+        '주말 자연 리트릿 및 1:1 맞춤형 마음 쉼과 힐링 세션 상시 운영',
         '직무 스트레스 완화와 팀 번아웃 회복을 위한 기업·기관 마인드풀니스 웰니스 프로그램 런칭',
         '온·오프라인을 잇는 지속 가능한 생태 명상 커뮤니티로 도약'
       ]
@@ -353,9 +353,9 @@ const App = () => {
       tag: '자연농의 지혜'
     },
     {
-      q: '현존명상센터 부여캠퍼스에서는 어떤 수련을 하나요?',
-      a: '무언가를 머리로 채우는 교육이 아닌, 도시에서 쌓인 과도한 자극을 비워내는 수련입니다. 숲밭 걷기, 맨손 흙 만지기, 천천히 씹어 삼키는 식사 명상, 차담을 통해 내 몸과 마음의 감각을 지금 이 순간으로 데려옵니다.',
-      tag: '현존 리트릿'
+      q: '부여캠퍼스에서는 어떤 명상과 쉼을 경험하나요?',
+      a: '무언가를 애써 배우고 성취하는 것이 아닌, 도시에서 쌓인 과도한 자극을 비워내고 나를 회복하는 시간입니다. 숲밭 거닐기, 맨손으로 흙 만지기, 천천히 맛을 음미하는 식사 명상, 따뜻한 차담을 통해 몸과 마음의 감각을 지금 이 순간으로 데려옵니다.',
+      tag: '일상 속 명상'
     },
     {
       q: '도시의 안정적인 경력을 정리하고 왜 부여 언덕이었을까요?',
@@ -666,8 +666,8 @@ const App = () => {
           </p>
 
           <p className="text-sm md:text-base text-[#5F6B58] max-w-xl mx-auto leading-relaxed mb-12 font-light">
-            도시 회원들의 깊은 쉼과 집중수련을 위한 안식처.<br className="hidden md:inline" />
-            흙을 만지고 바람 소리에 귀 기울이며, '지금, 여기'에 온전히 깨어납니다.
+            도심을 벗어나 자연 그대로의 고요와 평온을 만나는 숲밭.<br className="hidden md:inline" />
+            흙을 만지고 바람 소리에 귀 기울이며, '지금, 여기'에 온전히 머뭅니다.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -704,12 +704,12 @@ const App = () => {
               Truebeing Meditation Center · Buyeo Campus
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-[#222A1E] tracking-tight">
-              도시의 소음을 벗어나, 흙과 마주하는 집중수련
+              도시의 소음을 벗어나, 자연 속에서 마주하는 온전한 쉼
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
               봄농원은 <strong className="font-medium text-[#222A1E]">현존명상센터(Truebeing Meditation)의 부여캠퍼스</strong>입니다.<br />
-              성북동 본원이 도심 속 일상 수련과 1:1 심층 상담의 중심이라면, 이곳 부여캠퍼스는 대지 위에 서서 호흡을 고르고 침묵과 알아차림으로 내면을 회복하는 전용 수련처입니다.
+              성북동 본원이 도심 속 일상적인 만남과 1:1 심층 상담 중심이라면, 이곳 부여캠퍼스는 드넓은 대지 위에 서서 호흡을 고르고, 자연의 리듬 속에서 온전히 나 자신으로 머무는 안식처입니다.
             </p>
           </div>
 
@@ -755,7 +755,7 @@ const App = () => {
                 <Compass size={20} />
               </div>
               <h4 className="font-serif text-base font-bold text-[#232B1E]">
-                정통 사마타(Samatha) 집중수련
+                고요히 호흡을 바라보는 사마타(Samatha) 명상
               </h4>
               <p className="text-xs text-[#63705C] font-light leading-relaxed">
                 마음의 실체를 통찰하고 생각의 소용돌이에서 벗어나는 알아차림. 과거와 미래라는 관념을 내려놓고 '지금 이 순간'의 순수한 현존에 머뭅니다.
@@ -767,10 +767,10 @@ const App = () => {
                 <Sprout size={20} />
               </div>
               <h4 className="font-serif text-base font-bold text-[#232B1E]">
-                자연농 텃밭 노동 명상
+                숲밭을 거닐며 만나는 생태 명상
               </h4>
               <p className="text-xs text-[#63705C] font-light leading-relaxed">
-                1,800평 언덕 숲밭에서 맨발로 흙을 딛고 풀을 베어 덮어주는 시간. 몸의 단순한 움직임 속에서 머리의 번뇌가 씻겨나갑니다.
+                1,800평 언덕 숲밭에서 흙을 딛고 풀을 매만지며 자연과 교감하는 시간. 몸의 단순하고 자연스러운 움직임 속에서 복잡했던 머리가 맑게 비워집니다.
               </p>
             </div>
 
@@ -829,7 +829,7 @@ const App = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-white border border-[#DDD3C2] hover:bg-[#FAF8F5] text-[11px] text-[#485542] transition-colors"
                   >
-                    <span>수련생 카페</span>
+                    <span>네이버 카페 커뮤니티</span>
                     <ArrowUpRight size={11} />
                   </a>
                   <a
@@ -864,7 +864,7 @@ const App = () => {
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
               가구를 만들던 목수 남편과 인사 코칭·자연치유를 공부하는 아내.<br />
-              8년 넘게 요가와 현존명상을 수련하며 살아온 두 사람이 부여 언덕에서 나만의 속도로 짓는 삶의 기록입니다.
+              8년 넘게 요가와 명상을 일상으로 함께해 온 부부가 부여 언덕에서 자연의 속도로 가꾸어가는 삶의 기록입니다.
             </p>
           </div>
 
@@ -916,7 +916,7 @@ const App = () => {
 
                 <div className="p-4 rounded-xl bg-white border border-[#EFEAE0] text-xs text-[#52604C] leading-relaxed font-light italic">
                   <Quote size={14} className="text-[#8E6D52] mb-1 inline mr-1" />
-                  "도시에서 가구를 만들며 반듯한 직선과 흠 없는 표면을 좇던 때가 있었습니다. 하지만 이곳 부여의 흙밭에 터를 잡고 집과 작업실을 손수 지으며, 나무가 휘어진 채로, 풀이 돋아난 채로 아름답다는 것을 깨달았습니다. 나무의 결을 쓰다듬고 흙을 쥐는 매 순간이 제게는 가장 정직한 수련입니다."
+                  "도시에서 가구를 만들며 반듯한 직선과 흠 없는 표면을 좇던 때가 있었습니다. 하지만 이곳 부여의 흙밭에 터를 잡고 집과 작업실을 손수 지으며, 나무가 휘어진 채로, 풀이 돋아난 채로 아름답다는 것을 깨달았습니다. 나무의 결을 쓰다듬고 흙을 쥐는 매 순간이 제게는 가장 정직한 명상이자 삶의 쉼표입니다."
                 </div>
 
                 <p className="text-xs text-[#63705C] leading-relaxed font-light">
@@ -2405,8 +2405,8 @@ const App = () => {
               <p className="text-[11px] text-[#869580] mt-1">현존명상센터 부여캠퍼스 · 대중교통 및 주차 안내는 방문 시 상세 안내</p>
             </div>
             <div>
-              <p className="font-bold text-[#273223] mb-2 font-serif text-sm">치유와 집중수련</p>
-              <p>도시 회원 주말 리트릿 · 집중수련</p>
+              <p className="font-bold text-[#273223] mb-2 font-serif text-sm">자연 속 쉼과 머무름</p>
+              <p>주말 자연 리트릿 · 숲밭 걷기 명상</p>
               <p>개인·가족 힐링 프로그램 · 기업 그린 리커버리</p>
             </div>
             <div>
