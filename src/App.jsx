@@ -4,7 +4,11 @@ import {
   Heart,
   Sprout,
   Sun,
+  Sunrise,
+  Moon,
   Wind,
+  Footprints,
+  Hammer,
   MapPin,
   Calendar,
   Coffee,
@@ -97,11 +101,11 @@ const App = () => {
   // Daily timeline of farm life
   const dailyTimeline = [
     {
-      time: '06:30',
+      time: '07:00',
       period: '새벽 & 아침',
-      title: '숲밭 산책과 걷기 명상',
-      desc: '안개 걷히는 1,800평 언덕길을 고요히 걸으며, 발바닥에 닿는 대지의 온기와 풀잎의 이슬을 온몸으로 느낍니다.',
-      tag: '몸의 감각 깨우기',
+      title: '아침 모닝 리추얼 & 따뜻한 차담',
+      desc: '안개 걷히는 1,800평 언덕길을 고요히 걸으며 몸을 깨우고, 찻잔의 온기를 나누며 평온한 하루를 엽니다.',
+      tag: 'Morning Ritual & 차담',
       img: gardenNatural
     },
     {
@@ -115,33 +119,33 @@ const App = () => {
     {
       time: '10:00',
       period: '오전 일과',
-      title: '살아있는 흙과 만나는 자연농',
-      desc: '땅을 갈아엎지 않고 풀을 베어 덮어주며 대지를 돌봅니다. 땀방울 속에 잡념이 사라지고 깊은 몰입이 찾아옵니다.',
-      tag: '무경운 · 자연 멀칭',
+      title: '살아있는 흙과 만나는 텃밭 가꾸기 & 동물 돌보기',
+      desc: '땅을 갈아엎지 않고 풀을 베어 덮어주며 흙을 돌보고, 마당의 동물 친구들에게 신선한 풀을 건넵니다.',
+      tag: '자연농 텃밭 & 동물 교감',
       img: mulchingSoil
     },
     {
       time: '14:00',
       period: '오후 시간',
-      title: '스튜디오 나무다움의 손작업',
+      title: '스튜디오 나무다움의 나무다루기 목공',
       desc: '은은한 나무 향이 감도는 목공소에서 대패질과 사포질을 합니다. 나무의 결을 어루만지는 손끝의 알아차림.',
-      tag: '원목 손작업',
+      tag: '원목 손작업 테라피',
       img: woodWorkshop
     },
     {
       time: '16:30',
       period: '늦은 오후',
-      title: '나선형 만다라 정원 앞 차담(茶談)',
-      desc: '직접 덖은 제철 허브차 한 잔을 앞에 두고, 도시 회원들과 함께 삶의 깊은 이야기를 편견 없이 나눕니다.',
-      tag: '현존 나눔',
+      title: '숲밭 걷기와 나선형 만다라 정원 산책',
+      desc: '자연의 숨결이 머무는 숲밭 언덕을 거닐며 대지의 온기를 느끼고, 삶의 깊은 이야기를 편견 없이 나눕니다.',
+      tag: '숲밭 걷기 & 교감',
       img: mandalaMindfulness
     },
     {
       time: '20:00',
       period: '고요한 밤',
-      title: '장작 난로 불멍과 깊은 침묵',
-      desc: '타닥타닥 타오르는 난로의 불꽃을 바라보며 지나간 과거와 오지 않은 미래를 내려놓고 고요한 밤을 맞이합니다.',
-      tag: '내면의 쉼',
+      title: '저녁 캄 리셋 (Calm Reset) & 따뜻한 차담',
+      desc: '타닥타닥 타오르는 난로 불꽃과 함께 뇌의 과열을 끄고, 따뜻한 차 한 잔으로 깊은 평온과 이완을 맞이합니다.',
+      tag: 'Calm Reset & 밤의 쉼',
       img: stoveFire
     }
   ];
@@ -708,7 +712,7 @@ const App = () => {
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
-              봄농원은 <strong className="font-medium text-[#222A1E]">현존명상센터(Truebeing Meditation)의 부여캠퍼스</strong>입니다.<br />
+              봄농원은 <strong className="font-medium text-[#222A1E]">현존명상센터(Truebeing Meditation)의 부여캠퍼스</strong>입니다.<br className="hidden sm:inline" />
               성북동 본원이 도심 속 일상적인 만남과 1:1 심층 상담 중심이라면, 이곳 부여캠퍼스는 드넓은 대지 위에 서서 호흡을 고르고, 자연의 리듬 속에서 온전히 나 자신으로 머무는 안식처입니다.
             </p>
           </div>
@@ -863,7 +867,7 @@ const App = () => {
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
-              가구를 만들던 목수 남편과 인사 코칭·자연치유를 공부하는 아내.<br />
+              가구를 만들던 목수 남편과 인사 코칭·자연치유를 공부하는 아내.<br className="hidden sm:inline" />
               8년 넘게 요가와 명상을 일상으로 함께해 온 부부가 부여 언덕에서 자연의 속도로 가꾸어가는 삶의 기록입니다.
             </p>
           </div>
@@ -984,7 +988,7 @@ const App = () => {
       </section>
 
       {/* ──────────────────────────────────────────
-          Section 3: 치유 & 명상 프로그램 (새로 추가!)
+          Section 3: 치유 프로그램
       ────────────────────────────────────────── */}
       <section id="programs" className="py-24 md:py-36 px-6 border-b border-[#EDE6D8]">
         <div className="max-w-6xl mx-auto">
@@ -993,13 +997,13 @@ const App = () => {
             <span className="text-[12px] uppercase tracking-[0.25em] text-[#7B8770] font-semibold block mb-3">
               Healing & Mindfulness Programs
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl text-[#222A1E] tracking-tight">
-              봄농원의 치유 & 명상 프로그램
+            <h2 className="font-serif text-3xl md:text-4xl text-[#222A1E] tracking-tight break-keep">
+              봄농원의 치유 프로그램
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
-            <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
-              내면의 고요를 찾는 명상부터 소중한 이들과 함께하는 개인·가족 쉼표, 조직의 회복을 돕는 기업 웰니스까지.<br />
-              자연의 속도에 맞춰 깊은 회복을 선물하는 맞춤형 프로그램을 운영합니다.
+            <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light break-keep">
+              매일의 아침과 저녁을 맑게 여닫는 데일리 리추얼부터,<br className="hidden md:inline" />
+              자연의 대지 위에서 생명과 교감하는 4대 치유 활동을 운영합니다.
             </p>
 
             {/* Program Tabs */}
@@ -1012,7 +1016,7 @@ const App = () => {
                     : 'bg-white text-[#56634F] border border-[#DDD3C2] hover:bg-[#F4EFE5]'
                 }`}
               >
-                부여 농원 명상 프로그램
+                농원 일상 치유 프로그램
               </button>
               <button
                 onClick={() => setActiveProgramTab('family')}
@@ -1037,63 +1041,163 @@ const App = () => {
             </div>
           </div>
 
-          {/* Program Tab 1: 부여 농원 명상 프로그램 */}
+          {/* Program Tab 1: 부여 농원 치유 프로그램 */}
           {activeProgramTab === 'meditation' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-in fade-in duration-300">
-              <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs">
-                <div>
-                  <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
-                    <Wind size={20} />
+            <div className="space-y-12 animate-in fade-in duration-300">
+              {/* Daily Rituals: 아침 & 저녁 데일리 리추얼 (2단 카드) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* 1. 아침 07:00 Morning ritual + 따뜻한 차담 */}
+                <div className="p-7 md:p-8 rounded-2xl bg-gradient-to-br from-[#FAF7F0] to-[#F3EDE0] border border-[#E4DAC8] shadow-xs flex flex-col justify-between hover:border-[#CAD2C3] transition-all">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E0D0] text-[#3E5038] text-xs font-bold font-mono">
+                        <Sunrise size={14} className="text-[#5F7855]" />
+                        <span>아침 07:00</span>
+                      </div>
+                      <span className="text-[11px] text-[#7A8772] font-mono tracking-wider">MORNING RITUAL</span>
+                    </div>
+
+                    <div>
+                      <h3 className="font-serif text-xl md:text-2xl font-bold text-[#232B1E] mb-2 break-keep">
+                        Morning ritual + 따뜻한 차담
+                      </h3>
+                      <p className="text-xs md:text-[13px] text-[#55634F] leading-relaxed font-light break-keep">
+                        상쾌한 새벽 공기 속에서 밤새 굳어있던 몸과 호흡을 부드럽게 깨우는 아침 의식입니다.<br className="hidden sm:inline" />
+                        농원에서 직접 덖은 따뜻한 야생차를 음미하며 맑고 고요한 하루를 시작합니다.
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1">숲밭 걷기 명상</h3>
-                  <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">Walking Meditation</p>
-                  <p className="text-xs text-[#54604F] leading-relaxed font-light">
-                    1,800평 언덕길을 침묵 속에서 천천히 걸으며, 발바닥에 닿는 대지의 결감과 산바람, 새소리에 오감을 활짝 깨웁니다.
-                  </p>
+
+                  <div className="pt-4 mt-5 border-t border-[#E8DEC9] text-[11px] text-[#707D68] flex items-center justify-between">
+                    <span>진행: 호스트 안내 · 야외 숲밭 및 다도실</span>
+                    <span className="font-medium text-[#4B5E43]">매일 아침 진행</span>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">소요: 60분 · 야외 숲길</div>
+
+                {/* 2. 저녁 20:00 Calm reset + 따뜻한 차담 */}
+                <div className="p-7 md:p-8 rounded-2xl bg-gradient-to-br from-[#F5F2EB] to-[#ECE6DA] border border-[#DDD3C2] shadow-xs flex flex-col justify-between hover:border-[#CAD2C3] transition-all">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E0D8C8] text-[#3E4A37] text-xs font-bold font-mono">
+                        <Moon size={14} className="text-[#576850]" />
+                        <span>저녁 20:00</span>
+                      </div>
+                      <span className="text-[11px] text-[#7A8772] font-mono tracking-wider">CALM RESET</span>
+                    </div>
+
+                    <div>
+                      <h3 className="font-serif text-xl md:text-2xl font-bold text-[#232B1E] mb-2 break-keep">
+                        Calm reset + 따뜻한 차담
+                      </h3>
+                      <p className="text-xs md:text-[13px] text-[#55634F] leading-relaxed font-light break-keep">
+                        타닥타닥 타오르는 참나무 난롯가 앞에서 하루의 피로와 복잡한 뇌의 과열을 끕니다.<br className="hidden sm:inline" />
+                        깊은 이완과 침묵 속에서 따뜻한 차 한 잔을 나누며 온전한 평온으로 돌아가는 밤의 쉼표입니다.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 mt-5 border-t border-[#DFD5C4] text-[11px] text-[#707D68] flex items-center justify-between">
+                    <span>진행: 쉼터 벽난로 및 실내 다도실</span>
+                    <span className="font-medium text-[#4B5E43]">매일 저녁 진행</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs">
-                <div>
-                  <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
-                    <Compass size={20} />
-                  </div>
-                  <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1">만다라 호흡 명상</h3>
-                  <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">Mandala Spiral Breath</p>
-                  <p className="text-xs text-[#54604F] leading-relaxed font-light">
-                    나선형으로 배치된 만다라 허브밭 중심에서 자신의 들숨과 날숨에 주의를 모으고, 흩어진 생각을 편안히 가라앉힙니다.
-                  </p>
+              {/* 4대 치유 활동: 숲밭 걷기, 동물 돌보기, 텃밭 가꾸기, 나무다루기 목공 */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-[#52634B]"></div>
+                  <h4 className="font-serif text-lg font-bold text-[#232B1E] break-keep">
+                    자연과 호흡하는 4대 치유 활동
+                  </h4>
+                  <span className="text-xs text-[#7A8772] font-light">대지 위에서 생명과 교감하는 시간</span>
                 </div>
-                <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">소요: 50분 · 만다라 정원</div>
-              </div>
 
-              <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs">
-                <div>
-                  <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
-                    <Coffee size={20} />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {/* 1. 숲밭 걷기 */}
+                  <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs hover:border-[#CAD2C3] transition-all">
+                    <div>
+                      <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
+                        <Footprints size={20} />
+                      </div>
+                      <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1 break-keep">
+                        숲밭 걷기
+                      </h3>
+                      <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">
+                        Forest Walking & Grounding
+                      </p>
+                      <p className="text-xs text-[#54604F] leading-relaxed font-light break-keep">
+                        1,800평 언덕길을 침묵 속에서 천천히 걸으며, 발바닥에 닿는 대지의 결감과 산바람, 새소리에 오감을 활짝 깨웁니다.
+                      </p>
+                    </div>
+                    <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">
+                      소요: 60분 · 야외 숲길
+                    </div>
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1">감각을 깨우는 차담(茶談)</h3>
-                  <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">Mindful Tea Ceremony</p>
-                  <p className="text-xs text-[#54604F] leading-relaxed font-light">
-                    농원에서 직접 덖은 야생 허브차를 우려내어 찻잔의 온기와 향기를 천천히 음미하고, 편견 없이 마음을 나누는 찻자리.
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">소요: 60분 · 실내 다도실</div>
-              </div>
 
-              <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs">
-                <div>
-                  <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
-                    <Flame size={20} />
+                  {/* 2. 동물 돌보기 */}
+                  <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs hover:border-[#CAD2C3] transition-all">
+                    <div>
+                      <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
+                        <Heart size={20} />
+                      </div>
+                      <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1 break-keep">
+                        동물 돌보기
+                      </h3>
+                      <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">
+                        Gentle Animal Care
+                      </p>
+                      <p className="text-xs text-[#54604F] leading-relaxed font-light break-keep">
+                        농원의 다정한 반려견, 토끼들에게 풀을 건네고 눈을 맞추며, 말 없는 생명들과 순수한 온기를 나누는 평화로운 돌봄입니다.
+                      </p>
+                    </div>
+                    <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">
+                      소요: 40분 · 농원 마당 & 쉼터
+                    </div>
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1">난롯가 불멍 침묵 명상</h3>
-                  <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">Fireplace Stillness</p>
-                  <p className="text-xs text-[#54604F] leading-relaxed font-light">
-                    타닥타닥 타오르는 참나무 장작 난로 불꽃을 묵묵히 바라보며 복잡한 뇌의 과열을 끄고 깊은 평온과 이완으로 들어갑니다.
-                  </p>
+
+                  {/* 3. 텃밭 가꾸기 */}
+                  <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs hover:border-[#CAD2C3] transition-all">
+                    <div>
+                      <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
+                        <Sprout size={20} />
+                      </div>
+                      <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1 break-keep">
+                        텃밭 가꾸기
+                      </h3>
+                      <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">
+                        Natural Gardening
+                      </p>
+                      <p className="text-xs text-[#54604F] leading-relaxed font-light break-keep">
+                        무경운과 자연 멀칭의 살아있는 흙을 매만지고 제철 채소를 돌보며, 대지의 생명력 속에서 복잡한 생각을 비워냅니다.
+                      </p>
+                    </div>
+                    <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">
+                      소요: 60분 · 자연농 텃밭
+                    </div>
+                  </div>
+
+                  {/* 4. 나무다루기 목공 */}
+                  <div className="p-7 rounded-2xl bg-white border border-[#E8E1D3] space-y-4 flex flex-col justify-between shadow-xs hover:border-[#CAD2C3] transition-all">
+                    <div>
+                      <div className="w-10 h-10 rounded-full bg-[#EAE4D5] flex items-center justify-center text-[#4B5E43] mb-3">
+                        <Hammer size={20} />
+                      </div>
+                      <h3 className="font-serif text-lg font-bold text-[#232B1E] mb-1 break-keep">
+                        나무다루기 목공
+                      </h3>
+                      <p className="text-[11px] text-[#7A8772] font-mono uppercase tracking-wider mb-3">
+                        Woodcraft Therapy
+                      </p>
+                      <p className="text-xs text-[#54604F] leading-relaxed font-light break-keep">
+                        스튜디오 나무다움 목공소에서 은은한 원목 향을 맡으며 대패질과 사포질에 몰입하는 손끝의 정직한 알아차림입니다.
+                      </p>
+                    </div>
+                    <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">
+                      소요: 90분 · 목공 스튜디오
+                    </div>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-[#F2EDE2] text-[11px] text-[#707D68]">소요: 60분 · 저녁/동절기</div>
               </div>
             </div>
           )}
@@ -1505,7 +1609,7 @@ const App = () => {
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
-              큰 농기계 대신 손과 작은 도구로 흙을 돌봅니다.<br />
+              큰 농기계 대신 손과 작은 도구로 흙을 돌봅니다.<br className="hidden sm:inline" />
               땅을 해치지 않고 자연의 순환에 맞춰 기르는 네 가지 원칙을 지켜나갑니다.
             </p>
           </div>
@@ -1629,7 +1733,7 @@ const App = () => {
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
-              가구를 만들던 목수가 지역 목수님과 함께 농원의 집과 작업실을 직접 지었습니다.<br />
+              가구를 만들던 목수가 지역 목수님과 함께 농원의 집과 작업실을 직접 지었습니다.<br className="hidden sm:inline" />
               원목 고유의 나뭇결과 향을 살려, 자연을 해치지 않는 정직하고 소박한 가구와 공간 현판을 만듭니다.
             </p>
           </div>
@@ -1898,7 +2002,7 @@ const App = () => {
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
-              봄농원은 '해야 할 일'을 빨리 끝내는 곳이 아니라, 하나하나의 일에 온전히 머무는 연습을 하는 곳입니다.<br />
+              봄농원은 '해야 할 일'을 빨리 끝내는 곳이 아니라, 하나하나의 일에 온전히 머무는 연습을 하는 곳입니다.<br className="hidden sm:inline" />
               흙 내음 속에서 건강한 일상을 함께 가꿀 분들을 기다립니다.
             </p>
           </div>
@@ -2161,7 +2265,7 @@ const App = () => {
             </h2>
             <div className="w-8 h-px bg-[#C8BCAB] mx-auto mt-6 mb-6"></div>
             <p className="text-[#5E6B56] max-w-2xl mx-auto leading-relaxed text-sm md:text-base font-light">
-              봄농원은 고요한 명상과 자연순환의 삶이 숨 쉬는 곳입니다.<br />
+              봄농원은 고요한 명상과 자연순환의 삶이 숨 쉬는 곳입니다.<br className="hidden sm:inline" />
               방문객 모두의 깊은 쉼과 몰입을 위해 사전 문의 및 예약 후 방문해 주시기를 부탁드립니다.
             </p>
           </div>
